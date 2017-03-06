@@ -13,9 +13,9 @@ Cube::~Cube()
 void Cube::Display() {
 	glPushMatrix();
 
-	glTranslated(3, -1, 335);
-	glScaled(2.f, 2.f, 2.f);
-	glRotated(-30 + rotation, 1, 0, 0);
+	//glTranslated(3, -1, 335);
+	//glScaled(2.f, 2.f, 2.f);
+	//glRotated(-30 + rotation, 1, 0, 0);
 
 	for (int i = 0; i < 4; i++) {
 		drawSquare();
@@ -40,7 +40,7 @@ void Cube::Display() {
 
 
 void Cube::Update(const double& deltaTime) {
-	rotation += 1;
+	//rotation += 1;
 }
 
 void Cube::drawSquare() {

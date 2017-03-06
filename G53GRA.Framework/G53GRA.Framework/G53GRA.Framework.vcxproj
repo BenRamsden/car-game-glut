@@ -11,6 +11,7 @@
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\MyScene.cpp" />
     <ClCompile Include="Code\Tetra.cpp" />
+    <ClCompile Include="Code\CubeHuman.cpp" />
     <ClCompile Include="Framework\Engine\Engine.cpp" />
     <ClCompile Include="Framework\Engine\Scene.cpp" />
     <ClCompile Include="Framework\Utility\Camera.cpp" />
@@ -20,6 +21,7 @@
     <ClInclude Include="Code\Cube.h" />
     <ClInclude Include="Code\MyScene.h" />
     <ClInclude Include="Code\Tetra.h" />
+    <ClInclude Include="Code\CubeHuman.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />
     <ClInclude Include="Framework\Engine\Scene.h" />
     <ClInclude Include="Framework\Interface\Animation.h" />

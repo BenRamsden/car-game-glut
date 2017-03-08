@@ -1,5 +1,5 @@
 #include "MyScene.h"
-#include "Tetra.h"
+#include "Tree.h"
 #include "CubeHuman.h"
 #include "TexturedCube.h"
 #include "RoadSquare.h"
@@ -16,12 +16,12 @@ void MyScene::Initialise()
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
 	CubeHuman *cube_human = new CubeHuman();
-	Tetra *tetra = new Tetra();
+	Tree *tree = new Tree("./Textures/Tree_Leaves.bmp");
 	TexturedCube *texturedCube = new TexturedCube("./Textures/Rocky_Mountain.bmp");
 	//RoadSquare *roadSquare = new RoadSquare("./Textures/Asphalt_Road.bmp");
 	RoadManager *roadManager = new RoadManager(25);
 
-	AddObjectToScene(tetra);
+	AddObjectToScene(tree);
 	AddObjectToScene(cube_human);
 	AddObjectToScene(texturedCube);
 	//AddObjectToScene(roadSquare);

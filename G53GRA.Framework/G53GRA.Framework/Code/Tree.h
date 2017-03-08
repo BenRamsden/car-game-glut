@@ -2,18 +2,18 @@
 #include "DisplayableObject.h"
 #include "Animation.h"
 
-class Tetra :
+class Tree :
 	public DisplayableObject,
 	public Animation
 {
 public:
-	Tetra();
-	virtual ~Tetra();
+	Tree(const std::string& filename);
+	virtual ~Tree();
 
 	virtual void Display();
 	virtual void Update(const double& deltaTime);
 
 private:
-	double rotation = 0;
+	GLint texID;
 };
 

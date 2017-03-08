@@ -5,6 +5,10 @@ using namespace std;
 TexturedCube::TexturedCube(const string& filename)
 {
 	texID = Scene::GetTexture(filename);
+
+	pos[0] -= 9;
+	pos[1] += 1.5;
+	pos[2] += 0.25;
 }
 
 void TexturedCube::Display()
@@ -160,6 +164,5 @@ void TexturedCube::DrawCube()
 
 void TexturedCube::Update(const double& deltaTime)
 {
-	rotation[0] += (float)deltaTime*20.f; // Rotate around x axis at 20degrees per second
 	rotation[1] += (float)deltaTime*10.f; // Rotate around y axis at 10degrees per second
 }

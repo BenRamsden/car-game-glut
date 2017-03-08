@@ -36,9 +36,6 @@
     <ClCompile Include="Code\Cube.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Code\Tetra.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Code\CubeHuman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -49,6 +46,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Code\RoadManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\Tree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -83,9 +83,6 @@
     <ClInclude Include="Code\Cube.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Code\Tetra.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Code\CubeHuman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -98,9 +95,18 @@
     <ClInclude Include="Code\RoadManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Code\Tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\Rocky_Mountain.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\Asphalt_Road.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\Tree_Leaves.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

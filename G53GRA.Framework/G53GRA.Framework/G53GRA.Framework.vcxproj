@@ -10,7 +10,7 @@
     <ClCompile Include="Code\Cube.cpp" />
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\MyScene.cpp" />
-    <ClCompile Include="Code\Tetra.cpp" />
+    <ClCompile Include="Code\Tree.cpp" />
     <ClCompile Include="Code\CubeHuman.cpp" />
     <ClCompile Include="Code\TexturedCube.cpp" />
     <ClCompile Include="Framework\Engine\Engine.cpp" />
@@ -23,7 +23,7 @@
   <ItemGroup>
     <ClInclude Include="Code\Cube.h" />
     <ClInclude Include="Code\MyScene.h" />
-    <ClInclude Include="Code\Tetra.h" />
+    <ClInclude Include="Code\Tree.h" />
     <ClInclude Include="Code\CubeHuman.h" />
     <ClInclude Include="Code\TexturedCube.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />
@@ -38,7 +38,9 @@
     <ClInclude Include="Code\RoadManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Textures\Asphalt_Road.bmp" />
     <Image Include="Textures\Rocky_Mountain.bmp" />
+    <Image Include="Textures\Tree_Leaves.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CE3A8304-475E-425E-BA11-FDAA6293C905}</ProjectGuid>

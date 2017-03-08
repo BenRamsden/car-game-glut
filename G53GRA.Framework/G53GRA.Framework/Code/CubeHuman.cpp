@@ -12,7 +12,8 @@ CubeHuman::~CubeHuman()
 
 void CubeHuman::Display() {
 	glPushMatrix();
-	glTranslated(3, 2, 0);
+	glTranslated(9, 2, 0);
+	glRotated(-45, 0, 1, 0);
 	glScaled(0.2, 0.2, 0.2);
 
 	//head

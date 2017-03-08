@@ -12,7 +12,7 @@ CubeHuman::~CubeHuman()
 
 void CubeHuman::Display() {
 	glPushMatrix();
-	glTranslated(3, 2, 335);
+	glTranslated(3, 2, 0);
 	glScaled(0.2, 0.2, 0.2);
 
 	//head

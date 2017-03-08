@@ -42,6 +42,9 @@
     <ClCompile Include="Code\CubeHuman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Code\TexturedCube.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Framework\Engine\Engine.h">
@@ -80,5 +83,13 @@
     <ClInclude Include="Code\CubeHuman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Code\TexturedCube.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\Rocky_Mountain.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

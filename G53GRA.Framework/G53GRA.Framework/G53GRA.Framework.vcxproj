@@ -12,6 +12,7 @@
     <ClCompile Include="Code\MyScene.cpp" />
     <ClCompile Include="Code\Tetra.cpp" />
     <ClCompile Include="Code\CubeHuman.cpp" />
+    <ClCompile Include="Code\TexturedCube.cpp" />
     <ClCompile Include="Framework\Engine\Engine.cpp" />
     <ClCompile Include="Framework\Engine\Scene.cpp" />
     <ClCompile Include="Framework\Utility\Camera.cpp" />
@@ -22,6 +23,7 @@
     <ClInclude Include="Code\MyScene.h" />
     <ClInclude Include="Code\Tetra.h" />
     <ClInclude Include="Code\CubeHuman.h" />
+    <ClInclude Include="Code\TexturedCube.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />
     <ClInclude Include="Framework\Engine\Scene.h" />
     <ClInclude Include="Framework\Interface\Animation.h" />
@@ -30,6 +32,9 @@
     <ClInclude Include="Framework\Utility\Camera.h" />
     <ClInclude Include="Framework\Utility\Texture.h" />
     <ClInclude Include="Framework\Utility\VectorMath.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Textures\Rocky_Mountain.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{CE3A8304-475E-425E-BA11-FDAA6293C905}</ProjectGuid>

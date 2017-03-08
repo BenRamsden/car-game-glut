@@ -18,7 +18,7 @@ Tetra::~Tetra()
 void Tetra::Display() {
 	glPushMatrix();
 
-	glTranslated(-3, -1, 335);
+	glTranslated(-3, -1, 0);
 	glScaled(2.f, 2.f, 2.f);
 	glRotated(-30+rotation, 1, 0, 0);
 	

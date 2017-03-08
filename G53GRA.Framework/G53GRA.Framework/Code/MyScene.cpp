@@ -2,6 +2,7 @@
 #include "Tetra.h"
 #include "CubeHuman.h"
 #include "TexturedCube.h"
+#include "RoadSquare.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -16,10 +17,12 @@ void MyScene::Initialise()
 	CubeHuman *cube_human = new CubeHuman();
 	Tetra *tetra = new Tetra();
 	TexturedCube *texturedCube = new TexturedCube("./Textures/Rocky_Mountain.bmp");
+	RoadSquare *roadSquare = new RoadSquare("./Textures/Asphalt_Road.bmp");
 
 	AddObjectToScene(tetra);
 	AddObjectToScene(cube_human);
 	AddObjectToScene(texturedCube);
+	AddObjectToScene(roadSquare);
 }
 
 void MyScene::Projection()

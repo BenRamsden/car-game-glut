@@ -19,7 +19,7 @@ private:
 	GLfloat DEFAULT_WHITE[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 
 	GLfloat ambience[4] = { 0.0f, 0.0f, 0.0f, 0.0f };
-	GLfloat (*diffuse)[4];
+	GLfloat* diffuse;
 	GLfloat specular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
 	GLfloat spot_direction[4] = { 0.0f, 0.0f, -1.0f, 1.0f };
 };

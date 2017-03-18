@@ -7,18 +7,18 @@ Light::Light(MLightEnum mLightEnum, GLenum light)
 {
 	switch (mLightEnum) {
 		case RED_LIGHT:
-			diffuse = &DEFAULT_RED;
+			diffuse = DEFAULT_RED;
 			pos[0] -= 2;
 			break;
 		case GREEN_LIGHT:
-			diffuse = &DEFAULT_GREEN;
+			diffuse = DEFAULT_GREEN;
 			break;
 		case BLUE_LIGHT:
-			diffuse = &DEFAULT_BLUE;
+			diffuse = DEFAULT_BLUE;
 			pos[0] += 2;
 			break;
 		case WHITE_LIGHT:
-			diffuse = &DEFAULT_WHITE;
+			diffuse = DEFAULT_WHITE;
 			break;
 	}
 
@@ -35,14 +35,14 @@ void Light::Display() {
 
 	glPushMatrix();
 	glTranslated(position[0], position[1], position[2]);
-	glColor3f((*diffuse)[0], (*diffuse)[1], (*diffuse)[2]);
+	glColor3f(diffuse[0], diffuse[1], diffuse[2]);
 	glutSolidSphere(0.5, 16, 16);
 	glPopMatrix();
 
 	pos[2] -= 0.01f;
 		
 	glLightfv(mLight, GL_AMBIENT, ambience);
-	glLightfv(mLight, GL_DIFFUSE, *diffuse);
+	glLightfv(mLight, GL_DIFFUSE, diffuse);
 	glLightfv(mLight, GL_SPECULAR, specular);
 	glLightfv(mLight, GL_POSITION, position);
 	glLightfv(mLight, GL_SPOT_DIRECTION, spot_direction);
@@ -50,5 +50,5 @@ void Light::Display() {
 
 	//glLightf(mLight, GL_CONSTANT_ATTENUATION, 1.0f);
 	//glLightf(mLight, GL_LINEAR_ATTENUATION, 0.5f);
-	glLightf(mLight, GL_QUADRATIC_ATTENUATION, 0.08f);
+	glLightf(mLight, GL_QUADRATIC_ATTENUATION, 0.01f);
 }

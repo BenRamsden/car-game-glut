@@ -25,7 +25,7 @@ void MyScene::Initialise()
 	Tree *tree = new Tree("./Textures/Tree_Leaves.bmp");
 	TexturedCube *texturedCube = new TexturedCube("./Textures/Rocky_Mountain.bmp");
 	//RoadSquare *roadSquare = new RoadSquare("./Textures/Asphalt_Road.bmp");
-	RoadManager *roadManager = new RoadManager(25);
+	RoadManager *roadManager = new RoadManager(5);
 	Wall *wall = new Wall();
 	//MaterialTest *materialTest = new MaterialTest();
 	TexturedSphere *ts = new TexturedSphere("./Textures/alpha_map.bmp", "./Textures/alpha_clouds.bmp");

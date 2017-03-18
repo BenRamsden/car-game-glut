@@ -38,7 +38,10 @@ void TexturedSphere::Display()
 {
     // Push MODELVIEW matrix and attributes to respective stacks (save state)
     glPushMatrix();
-    glPushAttrib(GL_ALL_ATTRIB_BITS);
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
+	glEnable(GL_TEXTURE_2D);
+	glEnable(GL_COLOR_MATERIAL);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Apply object transformations in world space
     glTranslatef(pos[0], pos[1], pos[2]);
@@ -47,34 +50,22 @@ void TexturedSphere::Display()
     glRotatef(rotation[0], 1.0f, 0.0f, 0.0f);
     glScalef(scale[0], scale[1], scale[2]);
 
+	glColor3d(0.1, 0.1, 0.6);
+	DrawSphere();
+	glColor3d(1, 1, 1);
 
-    // Enable texturing (2D image as texture)
-    glEnable(GL_TEXTURE_2D);
-    // Bind input texture to GL_TEXTURE_2D buffer
-    glBindTexture(GL_TEXTURE_2D, _texID);
-    // Handle lighting effects
-    glEnable(GL_COLOR_MATERIAL);
-
-    // Render sphere
-    DrawSphere();
-
-	// Enable texturing (2D image as texture)
-	glEnable(GL_TEXTURE_2D);
-	// Bind input texture to GL_TEXTURE_2D buffer
-	glBindTexture(GL_TEXTURE_2D, _texID2);
-	// Handle lighting effects
-	//glEnable(GL_COLOR_MATERIAL);
-
-	// Render sphere
+	glBindTexture(GL_TEXTURE_2D, _texID);
 	DrawSphere();
 
-    // Unbind the texture
-    glBindTexture(GL_TEXTURE_2D, NULL);
-    // Disable texturing
-    glDisable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, _texID2);
+	DrawSphere();
+
+	glBindTexture(GL_TEXTURE_2D, NULL);
 
     // Pop matrix and attribute stack to revert transformation changes
-    glPopAttrib();
+	glDisable(GL_TEXTURE_2D);
+	glDisable(GL_COLOR_MATERIAL);
+	glPopAttrib();
     glPopMatrix();
 }
 

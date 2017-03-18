@@ -30,7 +30,7 @@ void MyScene::Initialise()
 	//MaterialTest *materialTest = new MaterialTest();
 	TexturedSphere *ts = new TexturedSphere("./Textures/alpha_map.bmp", "./Textures/alpha_clouds.bmp");
 	ts->size(100.0f);
-	ts->SetResolution(2);
+	ts->SetResolution(3);
 
 	AddObjectToScene(tree);
 	AddObjectToScene(cube_human);

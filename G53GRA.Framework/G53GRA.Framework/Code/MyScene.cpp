@@ -28,7 +28,7 @@ void MyScene::Initialise()
 	RoadManager *roadManager = new RoadManager(25);
 	Wall *wall = new Wall();
 	//MaterialTest *materialTest = new MaterialTest();
-	TexturedSphere *ts = new TexturedSphere("./Textures/alpha_map.bmp");
+	TexturedSphere *ts = new TexturedSphere("./Textures/alpha_map.bmp", "./Textures/alpha_clouds.bmp");
 	ts->size(100.0f);
 	ts->SetResolution(2);
 

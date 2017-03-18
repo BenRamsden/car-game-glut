@@ -22,15 +22,16 @@ TexturedSphere::TexturedSphere()
 }
 
 // Constructor with Texture filename
-TexturedSphere::TexturedSphere(const std::string& filename) : TexturedSphere()
+TexturedSphere::TexturedSphere(const std::string& filename1, const std::string& filename2) : TexturedSphere()
 {
-    SetTexture(filename);
+    SetTexture(filename1, filename2);
 }
 
-void TexturedSphere::SetTexture(const std::string& filename)
+void TexturedSphere::SetTexture(const std::string& filename1, const std::string& filename2)
 {
     // Load texture using the provided Texture loader (.bmp only)
-    _texID = Scene::GetTexture(filename);
+    _texID = Scene::GetTexture(filename1);
+	_texID2 = Scene::GetTexture(filename2);
 }
 
 void TexturedSphere::Display()
@@ -46,6 +47,7 @@ void TexturedSphere::Display()
     glRotatef(rotation[0], 1.0f, 0.0f, 0.0f);
     glScalef(scale[0], scale[1], scale[2]);
 
+
     // Enable texturing (2D image as texture)
     glEnable(GL_TEXTURE_2D);
     // Bind input texture to GL_TEXTURE_2D buffer
@@ -55,6 +57,16 @@ void TexturedSphere::Display()
 
     // Render sphere
     DrawSphere();
+
+	// Enable texturing (2D image as texture)
+	glEnable(GL_TEXTURE_2D);
+	// Bind input texture to GL_TEXTURE_2D buffer
+	glBindTexture(GL_TEXTURE_2D, _texID2);
+	// Handle lighting effects
+	//glEnable(GL_COLOR_MATERIAL);
+
+	// Render sphere
+	DrawSphere();
 
     // Unbind the texture
     glBindTexture(GL_TEXTURE_2D, NULL);

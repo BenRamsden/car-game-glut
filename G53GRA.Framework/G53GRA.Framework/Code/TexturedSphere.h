@@ -31,14 +31,14 @@ class TexturedSphere :
 {
 public:
 	TexturedSphere();
-	TexturedSphere(const std::string& filename);
+	TexturedSphere(const std::string& filename1, const std::string& filename2);
 	~TexturedSphere(){}
 	
 	void Display();
 	void Update(const double& deltaTime);
 	void HandleKey(unsigned char key, int state, int mx, int my);
 
-	void SetTexture(const std::string& filename);
+	void SetTexture(const std::string& filename1, const std::string& filename2);
 
 	// Manually set resolution
 	inline void SetResolution(int r) { _resolution = r >= 0 ? (r > _MAX_RES ? _MAX_RES : r) : 0; }
@@ -55,6 +55,7 @@ protected:
 
 	// ID to bound texture
 	int _texID;
+	int _texID2;
 	// recursive resolution (increase for finer mesh)
 	int _resolution;
 	// Flag for wireframe model

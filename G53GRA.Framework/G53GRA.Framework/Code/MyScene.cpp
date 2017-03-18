@@ -6,6 +6,7 @@
 #include "RoadManager.h"
 #include "Wall.h"
 #include "Light.h"
+#include "MaterialTest.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -24,6 +25,7 @@ void MyScene::Initialise()
 	//RoadSquare *roadSquare = new RoadSquare("./Textures/Asphalt_Road.bmp");
 	RoadManager *roadManager = new RoadManager(25);
 	Wall *wall = new Wall();
+	MaterialTest *materialTest = new MaterialTest();
 
 	AddObjectToScene(light1);
 	AddObjectToScene(tree);
@@ -32,6 +34,7 @@ void MyScene::Initialise()
 	//AddObjectToScene(roadSquare);
 	AddObjectToScene(roadManager);
 	AddObjectToScene(wall);
+	AddObjectToScene(materialTest);
 }
 
 void MyScene::Projection()

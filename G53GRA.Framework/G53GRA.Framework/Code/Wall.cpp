@@ -32,12 +32,6 @@ void Wall::Display() {
 
 	glBegin(GL_QUADS);
 
-	glMaterialfv(GL_FRONT, GL_AMBIENT, no_mat);
-	glMaterialfv(GL_FRONT, GL_DIFFUSE, mat_diffuse);
-	glMaterialfv(GL_FRONT, GL_SPECULAR, mat_specular);
-	glMaterialfv(GL_FRONT, GL_SHININESS, low_shininess);
-	glMaterialfv(GL_FRONT, GL_EMISSION, no_mat);
-
 	/*glNormal3d(0, 0, 1);
 	glVertex3d(- offset_size, - offset_size, 0);
 	glNormal3d(0, 0, 1);

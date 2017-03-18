@@ -18,23 +18,25 @@ void MyScene::Initialise()
 {
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
-	Light *light1 = new Light(GL_LIGHT1);
+	Light *light1 = new Light(Light::BLUE_LIGHT, GL_LIGHT1);
+	Light *light2 = new Light(Light::RED_LIGHT, GL_LIGHT2);
 	CubeHuman *cube_human = new CubeHuman();
 	Tree *tree = new Tree("./Textures/Tree_Leaves.bmp");
 	TexturedCube *texturedCube = new TexturedCube("./Textures/Rocky_Mountain.bmp");
 	//RoadSquare *roadSquare = new RoadSquare("./Textures/Asphalt_Road.bmp");
 	RoadManager *roadManager = new RoadManager(25);
 	Wall *wall = new Wall();
-	MaterialTest *materialTest = new MaterialTest();
+	//MaterialTest *materialTest = new MaterialTest();
 
-	AddObjectToScene(light1);
 	AddObjectToScene(tree);
 	AddObjectToScene(cube_human);
 	AddObjectToScene(texturedCube);
 	//AddObjectToScene(roadSquare);
 	AddObjectToScene(roadManager);
 	AddObjectToScene(wall);
-	AddObjectToScene(materialTest);
+	//AddObjectToScene(materialTest);
+	AddObjectToScene(light1);
+	AddObjectToScene(light2);
 }
 
 void MyScene::Projection()

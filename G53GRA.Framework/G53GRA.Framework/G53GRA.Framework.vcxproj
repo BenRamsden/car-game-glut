@@ -20,6 +20,7 @@
     <ClCompile Include="Code\RoadSquare.cpp" />
     <ClCompile Include="Code\RoadManager.cpp" />
     <ClCompile Include="Code\Wall.cpp" />
+    <ClCompile Include="Code\Light.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Cube.h" />
@@ -38,6 +39,7 @@
     <ClInclude Include="Code\RoadSquare.h" />
     <ClInclude Include="Code\RoadManager.h" />
     <ClInclude Include="Code\Wall.h" />
+    <ClInclude Include="Code\Light.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\Asphalt_Road.bmp" />

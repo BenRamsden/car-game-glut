@@ -19,6 +19,7 @@
     <ClCompile Include="Framework\Utility\Texture.cpp" />
     <ClCompile Include="Code\RoadSquare.cpp" />
     <ClCompile Include="Code\RoadManager.cpp" />
+    <ClCompile Include="Code\Wall.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Cube.h" />
@@ -36,6 +37,7 @@
     <ClInclude Include="Framework\Utility\VectorMath.h" />
     <ClInclude Include="Code\RoadSquare.h" />
     <ClInclude Include="Code\RoadManager.h" />
+    <ClInclude Include="Code\Wall.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\Asphalt_Road.bmp" />

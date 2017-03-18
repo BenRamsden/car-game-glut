@@ -4,6 +4,7 @@
 #include "TexturedCube.h"
 #include "RoadSquare.h"
 #include "RoadManager.h"
+#include "Wall.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -20,12 +21,14 @@ void MyScene::Initialise()
 	TexturedCube *texturedCube = new TexturedCube("./Textures/Rocky_Mountain.bmp");
 	//RoadSquare *roadSquare = new RoadSquare("./Textures/Asphalt_Road.bmp");
 	RoadManager *roadManager = new RoadManager(25);
+	Wall *wall = new Wall();
 
 	AddObjectToScene(tree);
 	AddObjectToScene(cube_human);
 	AddObjectToScene(texturedCube);
 	//AddObjectToScene(roadSquare);
 	AddObjectToScene(roadManager);
+	AddObjectToScene(wall);
 }
 
 void MyScene::Projection()

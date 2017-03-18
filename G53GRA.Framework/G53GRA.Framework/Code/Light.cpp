@@ -6,6 +6,7 @@ Light::Light(MLightEnum mLightEnum, GLenum light)
 	: mLight(light)
 {
 	pos[2] = -8.f;
+	pos[0] = 30;
 
 	switch (mLightEnum) {
 		case RED_LIGHT:

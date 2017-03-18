@@ -10,6 +10,7 @@
     <ClCompile Include="Code\Cube.cpp" />
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\MyScene.cpp" />
+    <ClCompile Include="Code\TexturedSphere.cpp" />
     <ClCompile Include="Code\Tree.cpp" />
     <ClCompile Include="Code\CubeHuman.cpp" />
     <ClCompile Include="Code\TexturedCube.cpp" />
@@ -26,6 +27,7 @@
   <ItemGroup>
     <ClInclude Include="Code\Cube.h" />
     <ClInclude Include="Code\MyScene.h" />
+    <ClInclude Include="Code\TexturedSphere.h" />
     <ClInclude Include="Code\Tree.h" />
     <ClInclude Include="Code\CubeHuman.h" />
     <ClInclude Include="Code\TexturedCube.h" />

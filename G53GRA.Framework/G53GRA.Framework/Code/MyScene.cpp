@@ -7,6 +7,7 @@
 #include "Wall.h"
 #include "Light.h"
 #include "MaterialTest.h"
+#include "TexturedSphere.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -27,6 +28,9 @@ void MyScene::Initialise()
 	RoadManager *roadManager = new RoadManager(25);
 	Wall *wall = new Wall();
 	//MaterialTest *materialTest = new MaterialTest();
+	TexturedSphere *ts = new TexturedSphere("./Textures/alpha_map.bmp");
+	ts->size(100.0f);
+	ts->SetResolution(2);
 
 	AddObjectToScene(tree);
 	AddObjectToScene(cube_human);
@@ -37,6 +41,7 @@ void MyScene::Initialise()
 	//AddObjectToScene(materialTest);
 	AddObjectToScene(light1);
 	AddObjectToScene(light2);
+	AddObjectToScene(ts);
 }
 
 void MyScene::Projection()

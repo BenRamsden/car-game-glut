@@ -18,7 +18,7 @@ void Wall::Display() {
 	
 	glPushMatrix();
 
-	glTranslated(0, 0, -10);
+	glTranslated(30, 0, -10);
 
 	glBegin(GL_QUADS);
 

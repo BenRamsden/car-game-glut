@@ -24,7 +24,7 @@ RoadManager::~RoadManager()
 void RoadManager::Display() {
 	glPushMatrix();
 
-	glTranslated(0, 0, 20);
+	glTranslated(0, -10, 20);
 
 	renderCount = 0;
 

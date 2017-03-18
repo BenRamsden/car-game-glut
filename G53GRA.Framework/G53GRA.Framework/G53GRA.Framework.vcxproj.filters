@@ -127,5 +127,11 @@
     <Image Include="Textures\Tree_Leaves.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Textures\alpha_clouds.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\alpha_map.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

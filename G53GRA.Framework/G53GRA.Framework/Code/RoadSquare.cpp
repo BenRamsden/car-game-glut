@@ -25,7 +25,6 @@ void RoadSquare::Display()
 	glBindTexture(GL_TEXTURE_2D, texID);
 
 	glPushMatrix();
-	glTranslated(0, -5, 0);
 
 	glBegin(GL_QUADS);
 

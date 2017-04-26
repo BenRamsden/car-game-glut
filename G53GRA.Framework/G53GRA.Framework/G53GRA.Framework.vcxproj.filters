@@ -139,10 +139,7 @@
     <Image Include="Textures\alpha_map.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Textures\Moon_Surface.jpg">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="Textures\Moon_Surface.bmp">
+    <Image Include="Textures\Moon_Surface2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

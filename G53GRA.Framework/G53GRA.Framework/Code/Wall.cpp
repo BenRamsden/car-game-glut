@@ -27,8 +27,8 @@ void Wall::Display() {
 
 	glBegin(GL_QUADS);
 
-	for (int x = -total_size; x <= total_size; x+= block_size) {
-		for (int y = -total_size; y <= total_size; y+= block_size) {
+	for (int x = -total_size; x <= total_size; x = x + block_size) {
+		for (int y = -total_size; y <= total_size; y = y + block_size) {
 			glColor3f(1.0f, 1.0f, 1.0f);
 			glTexCoord2f(0.0f, 0.0f);
 			glVertex3d(x- offset_size, y- offset_size, 0);

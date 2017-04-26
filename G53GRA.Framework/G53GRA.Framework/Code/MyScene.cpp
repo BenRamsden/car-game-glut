@@ -35,11 +35,10 @@ void MyScene::Initialise()
 	//AddObjectToScene(materialTest);
 	//AddObjectToScene(light1);
 	//AddObjectToScene(light2);
-
 	//RoadManager *roadManager = new RoadManager(5);
 	//AddObjectToScene(roadManager);
 
-	Wall *moon_surface = new Wall(Scene::GetTexture("./Textures/Moon_Surface.bmp"), 25, 100);
+	Wall *moon_surface = new Wall(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
 	moon_surface->orientation(-1, 0, 0);
 	moon_surface->position(0, -20, -100);
 	AddObjectToScene(moon_surface);

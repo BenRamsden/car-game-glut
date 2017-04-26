@@ -20,7 +20,9 @@ void MyScene::Initialise()
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
 	Light *light1 = new Light(Light::BLUE_LIGHT, GL_LIGHT1);
+	light1->position(23, 0, -18.f);
 	Light *light2 = new Light(Light::RED_LIGHT, GL_LIGHT2);
+	light2->position(17, 0, -18.f);
 	CubeHuman *cube_human = new CubeHuman();
 	Tree *tree = new Tree("./Textures/Tree_Leaves.bmp");
 	TexturedCube *texturedCube = new TexturedCube("./Textures/Rocky_Mountain.bmp");

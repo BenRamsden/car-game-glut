@@ -19,8 +19,7 @@ void MyScene::Initialise()
 {
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
-	//Light *light1 = new Light(Light::BLUE_LIGHT, GL_LIGHT1);
-	//light1->position(23, 0, -18.f);
+
 	//Light *light2 = new Light(Light::RED_LIGHT, GL_LIGHT2);
 	//light2->position(17, 0, -18.f);
 	//CubeHuman *cube_human = new CubeHuman();
@@ -33,10 +32,13 @@ void MyScene::Initialise()
 	//AddObjectToScene(texturedCube);
 	//AddObjectToScene(roadSquare);
 	//AddObjectToScene(materialTest);
-	//AddObjectToScene(light1);
 	//AddObjectToScene(light2);
 	//RoadManager *roadManager = new RoadManager(5);
 	//AddObjectToScene(roadManager);
+
+	Light *light1 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
+	light1->position(0, 50, 0);
+	AddObjectToScene(light1);
 
 	Wall *moon_surface = new Wall(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
 	moon_surface->orientation(-1, 0, 0);

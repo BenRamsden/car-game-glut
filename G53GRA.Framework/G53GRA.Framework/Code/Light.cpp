@@ -49,6 +49,6 @@ void Light::Display() {
 
 	//glLightf(mLight, GL_CONSTANT_ATTENUATION, 1.0f);
 	//glLightf(mLight, GL_LINEAR_ATTENUATION, 0.5f);
-	glLightf(mLight, GL_QUADRATIC_ATTENUATION, 0.01f);
+	//glLightf(mLight, GL_QUADRATIC_ATTENUATION, 0.01f);
 
 }

@@ -83,15 +83,6 @@ void Engine::InitFunc()
 	// (x, y, z, 0.0) -> directional lighting
 	// (x, y, z, 1.0) -> positional lighting
 	glEnable(GL_LIGHTING);
-	GLfloat ambience[] = { 1.f, 1.f, 1.f, 1.0f };
-	GLfloat diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
-	GLfloat specular[] = { 0.0f, 0.0f, 0.0f, 1.0f };
-	GLfloat position[] = { 0.0f, 0.0f, 0.0f, 0.0f };
-	glLightfv(GL_LIGHT0, GL_AMBIENT, ambience);
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
-	glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
-	glLightfv(GL_LIGHT0, GL_POSITION, position);
-	glEnable(GL_LIGHT0);
 
 	// Enable smooth shading from lighting
 	glShadeModel(GL_SMOOTH);

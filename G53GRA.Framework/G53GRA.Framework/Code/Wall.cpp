@@ -1,48 +1,51 @@
 #include "Wall.h"
 
-
-
-Wall::Wall()
+Wall::Wall(GLint surfaceTexId, float block_size, float total_size)
 {
-}
+	texId = surfaceTexId;
+	this->block_size = block_size;  //breaks if less than 1
+	this->total_size = total_size;
 
+	this->offset_size = block_size / 2;
+}
 
 Wall::~Wall()
 {
 }
 
 void Wall::Display() {
-	static double block_size = 1;
-	static double offset_size = block_size / 2;
-	static double size = 10;
+
 	
+	//glPushAttrib(GL_ALL_ATTRIB_BITS);
 	glPushMatrix();
 
-	glTranslated(20, 0, -20);
+	glEnable(GL_TEXTURE_2D);
+	glBindTexture(GL_TEXTURE_2D, texId);
+
+	glTranslatef(pos[0], pos[1], pos[2]);
+	glRotated(90, rotation[0], rotation[1], rotation[2]);
 
 	glBegin(GL_QUADS);
 
-	/*glNormal3d(0, 0, 1);
-	glVertex3d(- offset_size, - offset_size, 0);
-	glNormal3d(0, 0, 1);
-	glVertex3d(offset_size, - offset_size, 0);
-	glNormal3d(0, 0, 1);
-	glVertex3d(offset_size, offset_size, 0);
-	glNormal3d(0, 0, 1);
-	glVertex3d(- offset_size, offset_size, 0);*/
-
-	glNormal3d(0, 0, 1);
-
-	for (int x = -size; x <= size; x+= block_size) {
-		for (int y = -size; y <= size; y+= block_size) {
+	for (int x = -total_size; x <= total_size; x+= block_size) {
+		for (int y = -total_size; y <= total_size; y+= block_size) {
+			glColor3f(1.0f, 1.0f, 1.0f);
+			glTexCoord2f(0.0f, 0.0f);
 			glVertex3d(x- offset_size, y- offset_size, 0);
+			glTexCoord2f(0.0f, 1.0f);
 			glVertex3d(x+ offset_size, y- offset_size, 0);
+			glTexCoord2f(1.0f, 1.0f);
 			glVertex3d(x+ offset_size, y+ offset_size, 0);
+			glTexCoord2f(1.0f, 0.0f);
 			glVertex3d(x- offset_size, y+ offset_size, 0);
 		}
 	}
 
 	glEnd();
 
+	glBindTexture(GL_TEXTURE_2D, 0);
+	glDisable(GL_TEXTURE_2D);
+
 	glPopMatrix();
+	//glPopAttrib();
 }

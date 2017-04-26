@@ -30,15 +30,12 @@ class TexturedSphere :
 	public Input
 {
 public:
-	TexturedSphere();
-	TexturedSphere(const std::string& filename1, const std::string& filename2);
+	TexturedSphere(GLint texId1, GLint texId2);
 	~TexturedSphere(){}
 	
 	void Display();
 	void Update(const double& deltaTime);
 	void HandleKey(unsigned char key, int state, int mx, int my);
-
-	void SetTexture(const std::string& filename1, const std::string& filename2);
 
 	// Manually set resolution
 	inline void SetResolution(int r) { _resolution = r >= 0 ? (r > _MAX_RES ? _MAX_RES : r) : 0; }
@@ -54,8 +51,8 @@ protected:
 	void FixSeam(float &a, float &b, float &c);
 
 	// ID to bound texture
-	int _texID;
-	int _texID2;
+	int texId1;
+	int texId2;
 	// recursive resolution (increase for finer mesh)
 	int _resolution;
 	// Flag for wireframe model

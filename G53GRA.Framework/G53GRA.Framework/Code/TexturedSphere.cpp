@@ -2,10 +2,11 @@
 #include "VectorMath.h"
 
 // Default Constructor
-TexturedSphere::TexturedSphere()
-    : _resolution(4), _flagWireFrame(false), _flagAnimation(true), _texID(NULL)
+TexturedSphere::TexturedSphere(GLint texId1, GLint texId2)
+    : _resolution(4), _flagWireFrame(false), _flagAnimation(true)
 {
-	pos[2] = -300;
+	this->texId1 = texId1;
+	this->texId2 = texId2;
 
     // Octahedron vertices (used for initial triangle faces)
     static float vertices[] = 
@@ -19,19 +20,6 @@ TexturedSphere::TexturedSphere()
      };
     // Globalise vertices
     _initV = vertices;
-}
-
-// Constructor with Texture filename
-TexturedSphere::TexturedSphere(const std::string& filename1, const std::string& filename2) : TexturedSphere()
-{
-    SetTexture(filename1, filename2);
-}
-
-void TexturedSphere::SetTexture(const std::string& filename1, const std::string& filename2)
-{
-    // Load texture using the provided Texture loader (.bmp only)
-    _texID = Scene::GetTexture(filename1);
-	_texID2 = Scene::GetTexture(filename2);
 }
 
 void TexturedSphere::Display()
@@ -54,10 +42,10 @@ void TexturedSphere::Display()
 	DrawSphere();
 	glColor3d(1, 1, 1);
 
-	glBindTexture(GL_TEXTURE_2D, _texID);
+	glBindTexture(GL_TEXTURE_2D, texId1);
 	DrawSphere();
 
-	glBindTexture(GL_TEXTURE_2D, _texID2);
+	glBindTexture(GL_TEXTURE_2D, texId2);
 	DrawSphere();
 
 	glBindTexture(GL_TEXTURE_2D, NULL);

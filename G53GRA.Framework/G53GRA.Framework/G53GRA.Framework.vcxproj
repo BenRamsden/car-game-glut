@@ -49,6 +49,8 @@
     <Image Include="Textures\alpha_clouds.bmp" />
     <Image Include="Textures\alpha_map.bmp" />
     <Image Include="Textures\Asphalt_Road.bmp" />
+    <Image Include="Textures\Moon_Surface.bmp" />
+    <Image Include="Textures\Moon_Surface.jpg" />
     <Image Include="Textures\Rocky_Mountain.bmp" />
     <Image Include="Textures\Tree_Leaves.bmp" />
   </ItemGroup>

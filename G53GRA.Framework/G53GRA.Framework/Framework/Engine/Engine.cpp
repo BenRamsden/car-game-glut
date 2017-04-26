@@ -83,7 +83,7 @@ void Engine::InitFunc()
 	// (x, y, z, 0.0) -> directional lighting
 	// (x, y, z, 1.0) -> positional lighting
 	glEnable(GL_LIGHTING);
-	GLfloat ambience[] = { 0.2f, 0.2f, 0.2f, 1.0f };
+	GLfloat ambience[] = { 1.f, 1.f, 1.f, 1.0f };
 	GLfloat diffuse[] = { 0.8f, 0.8f, 0.8f, 1.0f };
 	GLfloat specular[] = { 0.0f, 0.0f, 0.0f, 1.0f };
 	GLfloat position[] = { 0.0f, 0.0f, 0.0f, 0.0f };

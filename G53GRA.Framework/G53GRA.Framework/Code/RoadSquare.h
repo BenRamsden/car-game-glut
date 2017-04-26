@@ -6,11 +6,13 @@ class RoadSquare :
 	public DisplayableObject
 {
 public:
-	RoadSquare(const std::string& filename);
+	RoadSquare(GLint texId, float block_size);
 	virtual ~RoadSquare();
 	virtual void Display();
 
 private:
-	GLint texID;
+	GLint texId;
+	float block_size;
+	float offset_size;
 };
 

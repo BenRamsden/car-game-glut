@@ -9,7 +9,7 @@ class RoadManager :
 	public Animation
 {
 public:
-	RoadManager(const int roadCount);
+	RoadManager(GLint roadTextureId, int initRoadCount, int block_size);
 	virtual ~RoadManager();
 
 	virtual void Display();
@@ -19,6 +19,8 @@ private:
 	int roadCount;
 	int renderCount;
 	RoadSquare* roadSquares[MAXROADS];
+
+	float block_size;
 
 };
 

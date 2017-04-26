@@ -33,8 +33,6 @@ void MyScene::Initialise()
 	//AddObjectToScene(roadSquare);
 	//AddObjectToScene(materialTest);
 	//AddObjectToScene(light2);
-	//RoadManager *roadManager = new RoadManager(5);
-	//AddObjectToScene(roadManager);
 
 	Light *light1 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
 	light1->position(0, 50, 0);
@@ -42,8 +40,12 @@ void MyScene::Initialise()
 
 	Wall *moon_surface = new Wall(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
 	moon_surface->orientation(-1, 0, 0);
-	moon_surface->position(0, -20, -100);
+	moon_surface->position(0, -17, -100);
 	AddObjectToScene(moon_surface);
+
+	RoadManager *roadManager = new RoadManager(Scene::GetTexture("./Textures/Asphalt_Road.bmp"), 15, 45);
+	roadManager->position(0, -16, 150);
+	AddObjectToScene(roadManager);
 
 	TexturedSphere *earth = new TexturedSphere(Scene::GetTexture("./Textures/alpha_map.bmp"), Scene::GetTexture("./Textures/alpha_clouds.bmp"));
 	earth->position(300, 500, -1500);

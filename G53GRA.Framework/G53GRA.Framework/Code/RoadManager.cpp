@@ -1,16 +1,13 @@
 #include "RoadManager.h"
 
 
-RoadManager::RoadManager(const int initRoadCount)
+RoadManager::RoadManager(GLint roadTextureId, int initRoadCount, int block_size)
 	: roadCount(0)
 {
-	if (initRoadCount > MAXROADS) {
-		printf("RoadManager: initRoadCount > MAXROADS, cannot initialize\n");
-		return;
-	}
+	this->block_size = block_size;
 
 	while (roadCount < initRoadCount) {
-		roadSquares[roadCount++] = new RoadSquare("./Textures/Asphalt_Road.bmp");
+		roadSquares[roadCount++] = new RoadSquare(roadTextureId, block_size);
 	}
 
 }
@@ -24,12 +21,12 @@ RoadManager::~RoadManager()
 void RoadManager::Display() {
 	glPushMatrix();
 
-	glTranslated(0, -10, 20);
+	glTranslated(pos[0], pos[1], pos[2]);
 
 	renderCount = 0;
 
 	while (renderCount < roadCount) {
-		glTranslated(0, 0, -10);
+		glTranslated(0, 0, -block_size);
 		roadSquares[renderCount++]->Display();
 	}
 

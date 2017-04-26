@@ -30,13 +30,15 @@ Light::~Light()
 }
 
 void Light::Display() {
+	//glPushAttrib(GL_ALPHA_BITS);  //stop transparency propogating?
+
 	gl_position[0] = pos[0];
 	gl_position[1] = pos[1];
 	gl_position[2] = pos[2];
 
 	glPushMatrix();
 		glTranslated(gl_position[0], gl_position[1], gl_position[2]);
-		glColor4f(1.0f, 1.0f, 1.0f, 0.5f);
+		glColor3f(1.0f, 1.0f, 1.0f);
 		glutSolidSphere(0.5, 16, 16);
 	glPopMatrix();
 	
@@ -44,8 +46,8 @@ void Light::Display() {
 	glLightfv(mLight, GL_DIFFUSE, gl_diffuse);
 	glLightfv(mLight, GL_SPECULAR, gl_specular);
 	glLightfv(mLight, GL_POSITION, gl_position);
-	glLightfv(mLight, GL_SPOT_DIRECTION, gl_direction);
-	glLightfv(mLight, GL_SPOT_CUTOFF, &gl_cutoff);
+	//glLightfv(mLight, GL_SPOT_DIRECTION, gl_direction);
+	//glLightfv(mLight, GL_SPOT_CUTOFF, &gl_cutoff);
 
 	//glLightf(mLight, GL_CONSTANT_ATTENUATION, 1.0f);
 	//glLightf(mLight, GL_LINEAR_ATTENUATION, 0.5f);

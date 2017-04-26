@@ -16,7 +16,7 @@ Wall::~Wall()
 void Wall::Display() {
 
 	
-	//glPushAttrib(GL_ALL_ATTRIB_BITS);
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	glPushMatrix();
 
 	glEnable(GL_TEXTURE_2D);
@@ -24,6 +24,8 @@ void Wall::Display() {
 
 	glTranslatef(pos[0], pos[1], pos[2]);
 	glRotated(90, rotation[0], rotation[1], rotation[2]);
+
+	glNormal3f(0, 0, 1);
 
 	glBegin(GL_QUADS);
 
@@ -47,5 +49,5 @@ void Wall::Display() {
 	glDisable(GL_TEXTURE_2D);
 
 	glPopMatrix();
-	//glPopAttrib();
+	glPopAttrib();
 }

@@ -52,6 +52,12 @@ void MyScene::Initialise()
 	earth->size(100.0f);
 	earth->SetResolution(2);
 	AddObjectToScene(earth);
+
+	//TODO Apollo 13 moon lander
+
+	//TODO American Flag
+
+	//TODO Stars Sky box/sphere
 }
 
 void MyScene::Projection()

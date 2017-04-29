@@ -1,8 +1,4 @@
 #include "MyScene.h"
-#include "Tree.h"
-#include "CubeHuman.h"
-#include "TexturedCube.h"
-#include "RoadSquare.h"
 #include "RoadManager.h"
 #include "Wall.h"
 #include "Light.h"
@@ -19,20 +15,11 @@ void MyScene::Initialise()
 {
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
-
-	//Light *light2 = new Light(Light::RED_LIGHT, GL_LIGHT2);
-	//light2->position(17, 0, -18.f);
-	//CubeHuman *cube_human = new CubeHuman();
-	//Tree *tree = new Tree("./Textures/Tree_Leaves.bmp");
-	//TexturedCube *texturedCube = new TexturedCube("./Textures/Rocky_Mountain.bmp");
-	//RoadSquare *roadSquare = new RoadSquare("./Textures/Asphalt_Road.bmp");
-	//MaterialTest *materialTest = new MaterialTest();
-	//AddObjectToScene(tree);
-	//AddObjectToScene(cube_human);
-	//AddObjectToScene(texturedCube);
-	//AddObjectToScene(roadSquare);
-	//AddObjectToScene(materialTest);
-	//AddObjectToScene(light2);
+	MaterialTest *materialTest = new MaterialTest();
+	materialTest->position(+20, -16, -50);
+	materialTest->orientation(0, -1, 0);
+	materialTest->size(3, 3, 3);
+	AddObjectToScene(materialTest);
 
 	Light *light1 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
 	light1->position(0, 50, 0);

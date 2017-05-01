@@ -4,6 +4,7 @@
 #include "Light.h"
 #include "MaterialTest.h"
 #include "TexturedSphere.h"
+#include "Flag.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -14,6 +15,12 @@ MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidt
 void MyScene::Initialise()
 {
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
+
+	//Translate, Rotate, Scale (T * R * S)
+
+	Flag *flag = new Flag();
+	flag->position(-20, -16, -50);
+	AddObjectToScene(flag);
 
 	MaterialTest *materialTest = new MaterialTest();
 	materialTest->position(+20, -16, -50);

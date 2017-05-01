@@ -8,6 +8,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Code\Cube.cpp" />
+    <ClCompile Include="Code\Flag.cpp" />
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\MyScene.cpp" />
     <ClCompile Include="Code\TexturedSphere.cpp" />
@@ -23,6 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Cube.h" />
+    <ClInclude Include="Code\Flag.h" />
     <ClInclude Include="Code\MyScene.h" />
     <ClInclude Include="Code\TexturedSphere.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />

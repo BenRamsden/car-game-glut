@@ -18,7 +18,7 @@
     <ClCompile Include="Framework\Utility\Texture.cpp" />
     <ClCompile Include="Code\RoadSquare.cpp" />
     <ClCompile Include="Code\RoadManager.cpp" />
-    <ClCompile Include="Code\Wall.cpp" />
+    <ClCompile Include="Code\TexturedSquare.cpp" />
     <ClCompile Include="Code\Light.cpp" />
     <ClCompile Include="Code\MaterialTest.cpp" />
   </ItemGroup>
@@ -37,7 +37,7 @@
     <ClInclude Include="Framework\Utility\VectorMath.h" />
     <ClInclude Include="Code\RoadSquare.h" />
     <ClInclude Include="Code\RoadManager.h" />
-    <ClInclude Include="Code\Wall.h" />
+    <ClInclude Include="Code\TexturedSquare.h" />
     <ClInclude Include="Code\Light.h" />
     <ClInclude Include="Code\MaterialTest.h" />
   </ItemGroup>

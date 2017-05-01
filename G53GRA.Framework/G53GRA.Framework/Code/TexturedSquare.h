@@ -1,12 +1,12 @@
 #pragma once
 #include "DisplayableObject.h"
 
-class Wall :
+class TexturedSquare :
 	public DisplayableObject
 {
 public:
-	Wall(GLint surfaceTexId, float block_size, float total_size);
-	virtual ~Wall();
+	TexturedSquare(GLint surfaceTexId, float block_size, float total_size);
+	virtual ~TexturedSquare();
 	virtual void Display();
 	GLint texId;
 

@@ -1,6 +1,6 @@
 #include "MyScene.h"
 #include "RoadManager.h"
-#include "Wall.h"
+#include "TexturedSquare.h"
 #include "Light.h"
 #include "MaterialTest.h"
 #include "TexturedSphere.h"
@@ -14,7 +14,7 @@ MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidt
 
 void MyScene::Initialise()
 {
-	glClearColor(static_cast<GLclampf>(0.2f), static_cast<GLclampf>(0.2f), static_cast<GLclampf>(0.2f), static_cast<GLclampf>(1.0f));
+	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
 	//Translate, Rotate, Scale (T * R * S)
 
@@ -28,7 +28,7 @@ void MyScene::Initialise()
 	light1->position(0, 50, 0);
 	AddObjectToScene(light1);
 
-	Wall *moon_surface = new Wall(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
+	TexturedSquare *moon_surface = new TexturedSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
 	moon_surface->orientation(-1, 0, 0);
 	moon_surface->position(0, -17, -100);
 	AddObjectToScene(moon_surface);

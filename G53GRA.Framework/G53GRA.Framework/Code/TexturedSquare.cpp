@@ -1,6 +1,6 @@
-#include "Wall.h"
+#include "TexturedSquare.h"
 
-Wall::Wall(GLint surfaceTexId, float block_size, float total_size)
+TexturedSquare::TexturedSquare(GLint surfaceTexId, float block_size, float total_size)
 {
 	texId = surfaceTexId;
 	this->block_size = block_size;  //breaks if less than 1
@@ -9,11 +9,11 @@ Wall::Wall(GLint surfaceTexId, float block_size, float total_size)
 	this->offset_size = block_size / 2;
 }
 
-Wall::~Wall()
+TexturedSquare::~TexturedSquare()
 {
 }
 
-void Wall::Display() {
+void TexturedSquare::Display() {
 
 	
 	glPushAttrib(GL_ALL_ATTRIB_BITS);

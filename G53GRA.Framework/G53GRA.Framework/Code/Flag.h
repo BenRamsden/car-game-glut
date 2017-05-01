@@ -12,6 +12,6 @@ public:
 	virtual void Update(const double& deltaTime);
 
 private:
-	void drawSquare();
+	void DrawCylinder(GLfloat radius, GLfloat height);
 };
 

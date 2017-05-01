@@ -1,5 +1,6 @@
 #include "Flag.h"
-
+#define _USE_MATH_DEFINES
+#include <math.h>
 
 Flag::Flag()
 {
@@ -18,17 +19,10 @@ void Flag::Display() {
 	//glRotatef(90, rotation[0], rotation[1], rotation[2]); //TODO: when enabled, dissapears, havent figured out why
 	glScalef(scale[0], scale[1], scale[2]);
 
-	for (int i = 0; i < 4; i++) {
-		drawSquare();
-
-		glRotated(90, 0, 1, 0);
-	}
-
-	glRotated(90, 0, 0, 1);
-	drawSquare();
-
-	glRotated(180, 0, 0, 1);
-	drawSquare();
+	//Draw Pole
+	glRotatef(90, -1, 0, 0); //turn pole upright
+	glColor3f(0.6f, 0.6f, 0.6f);
+	DrawCylinder(0.75, 25);
 
 	glPopMatrix();
 	glPopAttrib();
@@ -39,16 +33,27 @@ void Flag::Update(const double& deltaTime) {
 	//rotation += 1;
 }
 
-void Flag::drawSquare() {
-	glBegin(GL_TRIANGLES);
+void Flag::DrawCylinder(GLfloat radius, GLfloat height)
+{
+	GLfloat x, y, step = 0.8f;
 
-	glVertex3d(-1, -1, -1);
-	glVertex3d(-1, 1, 1);
-	glVertex3d(-1, 1, -1);
+	//Draw the Cylinder
+	glBegin(GL_QUAD_STRIP);
+	for (GLfloat angle = 0.0f; angle < 2 * M_PI + step; angle += step) {
+		x = radius * cos(angle);
+		y = radius * sin(angle);
+		glNormal3f(cos(angle), sin(angle), 0.0f);
+		glVertex3f(x, y, height);
+		glVertex3f(x, y, 0.0f);
+	}
+	glEnd();
 
-	glVertex3d(-1, 1, 1);
-	glVertex3d(-1, -1, -1);
-	glVertex3d(-1, -1, 1);
-
+	//Draw the end cap (top)
+	glBegin(GL_POLYGON);
+	for (GLfloat angle = 0.0f; angle < 2 * M_PI + step; angle += step) {
+		x = radius * cos(angle);
+		y = radius * sin(angle);
+		glVertex3f(x, y, height);
+	}
 	glEnd();
 }

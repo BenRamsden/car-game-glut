@@ -14,13 +14,9 @@ MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidt
 
 void MyScene::Initialise()
 {
-	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
+	glClearColor(static_cast<GLclampf>(0.2f), static_cast<GLclampf>(0.2f), static_cast<GLclampf>(0.2f), static_cast<GLclampf>(1.0f));
 
 	//Translate, Rotate, Scale (T * R * S)
-
-	Flag *flag = new Flag();
-	flag->position(-20, -16, -50);
-	AddObjectToScene(flag);
 
 	MaterialTest *materialTest = new MaterialTest();
 	materialTest->position(+20, -16, -50);
@@ -50,6 +46,9 @@ void MyScene::Initialise()
 	//TODO Apollo 13 moon lander
 
 	//TODO American Flag
+	Flag *flag = new Flag();
+	flag->position(-20, -16, -50);
+	AddObjectToScene(flag);
 
 	//TODO Stars Sky box/sphere
 }

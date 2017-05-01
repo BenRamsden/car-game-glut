@@ -11,5 +11,6 @@ public:
 private:
 	void Initialise();
 	void Projection();
+	void LightShow(float x, float y, float z, float x_step);
 
 };

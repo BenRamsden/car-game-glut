@@ -45,9 +45,6 @@
     <ClCompile Include="Code\Light.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Code\MaterialTest.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Code\TexturedSphere.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -55,6 +52,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Code\TexturedSquare.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Code\MaterialSphere.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -98,9 +98,6 @@
     <ClInclude Include="Code\Light.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Code\MaterialTest.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Code\TexturedSphere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -108,6 +105,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Code\TexturedSquare.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Code\MaterialSphere.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

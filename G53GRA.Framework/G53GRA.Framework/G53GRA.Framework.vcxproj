@@ -10,6 +10,7 @@
     <ClCompile Include="Code\Cube.cpp" />
     <ClCompile Include="Code\Flag.cpp" />
     <ClCompile Include="Code\main.cpp" />
+    <ClCompile Include="Code\MaterialSphere.cpp" />
     <ClCompile Include="Code\MyScene.cpp" />
     <ClCompile Include="Code\TexturedSphere.cpp" />
     <ClCompile Include="Framework\Engine\Engine.cpp" />
@@ -20,11 +21,11 @@
     <ClCompile Include="Code\RoadManager.cpp" />
     <ClCompile Include="Code\TexturedSquare.cpp" />
     <ClCompile Include="Code\Light.cpp" />
-    <ClCompile Include="Code\MaterialTest.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Code\Cube.h" />
     <ClInclude Include="Code\Flag.h" />
+    <ClInclude Include="Code\MaterialSphere.h" />
     <ClInclude Include="Code\MyScene.h" />
     <ClInclude Include="Code\TexturedSphere.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />
@@ -39,7 +40,6 @@
     <ClInclude Include="Code\RoadManager.h" />
     <ClInclude Include="Code\TexturedSquare.h" />
     <ClInclude Include="Code\Light.h" />
-    <ClInclude Include="Code\MaterialTest.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Textures\alpha_clouds.bmp" />

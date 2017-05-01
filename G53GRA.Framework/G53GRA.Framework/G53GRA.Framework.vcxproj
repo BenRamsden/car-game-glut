@@ -12,6 +12,7 @@
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\MaterialSphere.cpp" />
     <ClCompile Include="Code\MyScene.cpp" />
+    <ClCompile Include="Code\SkyBox.cpp" />
     <ClCompile Include="Code\TexturedSphere.cpp" />
     <ClCompile Include="Framework\Engine\Engine.cpp" />
     <ClCompile Include="Framework\Engine\Scene.cpp" />
@@ -27,6 +28,7 @@
     <ClInclude Include="Code\Flag.h" />
     <ClInclude Include="Code\MaterialSphere.h" />
     <ClInclude Include="Code\MyScene.h" />
+    <ClInclude Include="Code\SkyBox.h" />
     <ClInclude Include="Code\TexturedSphere.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />
     <ClInclude Include="Framework\Engine\Scene.h" />

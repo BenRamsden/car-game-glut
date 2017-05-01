@@ -5,6 +5,7 @@
 #include "MaterialSphere.h"
 #include "Light.h"
 #include "Flag.h"
+#include "SkyBox.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -52,6 +53,11 @@ void MyScene::Initialise()
 	AddObjectToScene(flag);
 
 	//TODO Stars Sky box/sphere
+	SkyBox *skyBox = new SkyBox(Scene::GetTexture("./Textures/Moon_Surface2.bmp"));
+	skyBox->position(0, 0, -1000);
+	skyBox->orientation(0, 1, 0);
+	skyBox->size(2000);
+	AddObjectToScene(skyBox);
 }
 
 void MyScene::Projection()

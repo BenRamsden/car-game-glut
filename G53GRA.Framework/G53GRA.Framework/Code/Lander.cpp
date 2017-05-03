@@ -17,19 +17,23 @@ struct LanderMesh {
 };
 
 void Lander::Display() {
-	int mesh_count = 2;
+	int mesh_count = 3;
 	LanderMesh lander_meshes[] = {
-		{ 10, 5, 5 },
-		{ 5, 5, 5 }
+		{ 0, 15, 2 },
+		{ 15, 17, 3 },
+		{ 17, 8, 15 },
+		{ 17, 0, 1 }
 	};
 
-	glPushMatrix();
 
 	glTranslatef(pos[0], pos[1], pos[2]);
 
 	LanderMesh lander_mesh;
 
+	glPushMatrix();
+
 	for(int mesh = 0; mesh < mesh_count; mesh++) {
+
 		lander_mesh = lander_meshes[mesh];
 
 		glTranslatef(0, lander_mesh.height, 0);
@@ -38,6 +42,8 @@ void Lander::Display() {
 	}
 
 	glPopMatrix();
+
+	//DRAW LEGS
 }
 
 void Lander::DrawCone(GLfloat top_radius, GLfloat bottom_radius, GLfloat height)
@@ -68,15 +74,6 @@ void Lander::DrawCone(GLfloat top_radius, GLfloat bottom_radius, GLfloat height)
 	glVertex3f(top_radius * cos(0.0f), top_radius * sin(0.0f), height);
 	glVertex3f(bottom_radius  * cos(0.0f), bottom_radius * sin(0.0f), 0.0f);
 
-	glEnd();
-
-	//Draw the end cap (top)
-	glBegin(GL_POLYGON);
-	for (GLfloat angle = 0.0f; angle < target_angle; angle += step) {
-		top_x = top_radius * cos(angle);
-		top_y = top_radius * sin(angle);
-		glVertex3f(top_x, top_y, height);
-	}
 	glEnd();
 
 	glPopMatrix();

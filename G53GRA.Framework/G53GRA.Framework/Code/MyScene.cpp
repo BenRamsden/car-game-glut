@@ -6,6 +6,7 @@
 #include "Light.h"
 #include "Flag.h"
 #include "SkyBox.h"
+#include "Lander.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -22,7 +23,7 @@ void MyScene::Initialise()
 	LightShow(0,40,-100,60);
 
 	MaterialSphere *materialSphere = new MaterialSphere();
-	materialSphere->position(0, -13, -100);
+	materialSphere->position(30, -13, -100);
 	materialSphere->size(3, 3, 3);
 	AddObjectToScene(materialSphere);
 
@@ -46,6 +47,9 @@ void MyScene::Initialise()
 	AddObjectToScene(earth);
 
 	//TODO Apollo 13 moon lander
+	Lander *lander = new Lander();
+	lander->position(0, -10, -100);
+	AddObjectToScene(lander);
 
 	//TODO American Flag
 	Flag *flag = new Flag();

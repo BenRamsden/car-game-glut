@@ -36,14 +36,24 @@ void Lander::Display() {
 
 		lander_mesh = lander_meshes[mesh];
 
-		glTranslatef(0, lander_mesh.height, 0);
+		glTranslatef(0, lander_mesh.height, 0);  //Stack each part
 
 		DrawCone(lander_mesh.top_radius, lander_mesh.bottom_radius, lander_mesh.height);
 	}
 
 	glPopMatrix();
 
-	//DRAW LEGS
+	for (int i = 0; i < 4; i++) {
+		glPushMatrix();
+		glRotatef(i*90, 0, 1, 0);
+		glTranslatef(8, 3, 8);
+		glRotatef(90, 0, -1, 1);
+
+		DrawCone(1, 3, 15);
+		glPopMatrix();
+
+	}
+
 }
 
 void Lander::DrawCone(GLfloat top_radius, GLfloat bottom_radius, GLfloat height)

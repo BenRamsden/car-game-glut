@@ -54,15 +54,15 @@ void MyScene::Initialise()
 
 	//TODO Stars Sky box/sphere
 	SkyBox *skyBox = new SkyBox(Scene::GetTexture("./Textures/Star_Scape.bmp"));
-	skyBox->position(0, 0, -1000);
+	skyBox->position(0, 0, -2000);
 	skyBox->orientation(0, 1, 0);
-	skyBox->size(2000);
+	skyBox->size(4000);
 	AddObjectToScene(skyBox);
 }
 
 void MyScene::Projection()
 {
-	gluPerspective(static_cast<GLdouble>(60.0), static_cast<GLdouble>(windowWidth) / static_cast<GLdouble>(windowHeight), static_cast<GLdouble>(1.0), static_cast<GLdouble>(2000.0));
+	gluPerspective(static_cast<GLdouble>(60.0), static_cast<GLdouble>(windowWidth) / static_cast<GLdouble>(windowHeight), static_cast<GLdouble>(1.0), static_cast<GLdouble>(4000.0));
 }
 
 void MyScene::LightShow(float x, float y, float z, float x_step) {

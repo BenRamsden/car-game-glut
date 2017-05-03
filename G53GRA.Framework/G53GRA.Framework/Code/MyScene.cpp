@@ -53,7 +53,7 @@ void MyScene::Initialise()
 	AddObjectToScene(flag);
 
 	//TODO Stars Sky box/sphere
-	SkyBox *skyBox = new SkyBox(Scene::GetTexture("./Textures/Moon_Surface2.bmp"));
+	SkyBox *skyBox = new SkyBox(Scene::GetTexture("./Textures/Star_Scape.bmp"));
 	skyBox->position(0, 0, -1000);
 	skyBox->orientation(0, 1, 0);
 	skyBox->size(2000);

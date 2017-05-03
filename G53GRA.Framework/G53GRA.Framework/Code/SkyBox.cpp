@@ -14,6 +14,8 @@ void SkyBox::Display() {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	glPushMatrix();
 
+	glDisable(GL_LIGHTING); //stop skybox reacting to lights
+
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, texId);
 
@@ -37,6 +39,8 @@ void SkyBox::Display() {
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glDisable(GL_TEXTURE_2D);
+
+	glEnable(GL_LIGHTING);
 
 	glPopMatrix();
 	glPopAttrib();

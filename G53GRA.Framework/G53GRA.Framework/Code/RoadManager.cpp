@@ -34,5 +34,12 @@ void RoadManager::Display() {
 }
 
 void RoadManager::Update(const double& deltaTime) {
+	static float maxPos = pos[2] + block_size;
+
+	pos[2] += deltaTime * 15.f;
+
+	if (pos[2] > maxPos) {
+		pos[2] -= block_size;
+	}
 
 }

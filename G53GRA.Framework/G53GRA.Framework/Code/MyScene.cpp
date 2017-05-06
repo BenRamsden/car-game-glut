@@ -19,17 +19,17 @@ void MyScene::Initialise()
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
 	//Translate, Rotate, Scale (T * R * S)
+	
+	LightShow(0,100,-100,150);
 
-	LightShow(0,40,-100,60);
+	Light *light0 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
+	light0->position(0, 50, 0);
+	AddObjectToScene(light0);
 
 	MaterialSphere *materialSphere = new MaterialSphere();
 	materialSphere->position(30, -13, -100);
 	materialSphere->size(3, 3, 3);
 	AddObjectToScene(materialSphere);
-
-	Light *light0 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
-	light0->position(0, 50, 0);
-	//AddObjectToScene(light0);
 
 	TexturedSquare *moon_surface = new TexturedSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
 	moon_surface->orientation(-1, 0, 0);

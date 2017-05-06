@@ -1,6 +1,6 @@
-#include "TexturedSquare.h"
+#include "MoonSquare.h"
 
-TexturedSquare::TexturedSquare(GLint surfaceTexId, float block_size, float total_size)
+MoonSquare::MoonSquare(GLint surfaceTexId, float block_size, float total_size)
 {
 	texId = surfaceTexId;
 	this->block_size = block_size;  //breaks if less than 1
@@ -9,13 +9,11 @@ TexturedSquare::TexturedSquare(GLint surfaceTexId, float block_size, float total
 	this->offset_size = block_size / 2;
 }
 
-TexturedSquare::~TexturedSquare()
+MoonSquare::~MoonSquare()
 {
 }
 
-void TexturedSquare::Display() {
-
-	
+void MoonSquare::Display() {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	glPushMatrix();
 
@@ -23,23 +21,23 @@ void TexturedSquare::Display() {
 	glBindTexture(GL_TEXTURE_2D, texId);
 
 	glTranslatef(pos[0], pos[1], pos[2]);
-	glRotated(90, rotation[0], rotation[1], rotation[2]);
 
-	glNormal3f(0, 0, 1);
+	glNormal3f(0, 1, 0);
 
 	glBegin(GL_QUADS);
 
 	for (int x = -total_size; x <= total_size; x = x + block_size) {
 		for (int y = -total_size; y <= total_size; y = y + block_size) {
-			glColor3f(1.0f, 1.0f, 1.0f);
-			glTexCoord2f(0.0f, 0.0f);
-			glVertex3d(x- offset_size, y- offset_size, 0);
-			glTexCoord2f(0.0f, 1.0f);
-			glVertex3d(x+ offset_size, y- offset_size, 0);
-			glTexCoord2f(1.0f, 1.0f);
-			glVertex3d(x+ offset_size, y+ offset_size, 0);
+
 			glTexCoord2f(1.0f, 0.0f);
-			glVertex3d(x- offset_size, y+ offset_size, 0);
+			glVertex3d(x - offset_size, 0, y + offset_size);
+			glTexCoord2f(1.0f, 1.0f);
+			glVertex3d(x + offset_size, 0, y + offset_size);
+			glTexCoord2f(0.0f, 1.0f);
+			glVertex3d(x + offset_size, 0, y - offset_size);
+			glTexCoord2f(0.0f, 0.0f);
+			glVertex3d(x- offset_size, 0, y - offset_size);
+			
 		}
 	}
 

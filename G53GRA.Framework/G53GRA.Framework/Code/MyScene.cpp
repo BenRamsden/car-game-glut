@@ -1,6 +1,6 @@
 #include "MyScene.h"
 #include "RoadManager.h"
-#include "TexturedSquare.h"
+#include "MoonSquare.h"
 #include "TexturedSphere.h"
 #include "MaterialSphere.h"
 #include "Light.h"
@@ -31,10 +31,9 @@ void MyScene::Initialise()
 	materialSphere->size(3, 3, 3);
 	AddObjectToScene(materialSphere);
 
-	TexturedSquare *moon_surface = new TexturedSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
-	moon_surface->orientation(-1, 0, 0);
-	moon_surface->position(0, -17, -100);
-	AddObjectToScene(moon_surface);
+	MoonSquare *moon_square = new MoonSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
+	moon_square->position(0, -17, -100);
+	AddObjectToScene(moon_square);
 
 	RoadManager *roadManager = new RoadManager(Scene::GetTexture("./Textures/Asphalt_Road.bmp"), 15, 45);
 	roadManager->position(0, -16, 150);

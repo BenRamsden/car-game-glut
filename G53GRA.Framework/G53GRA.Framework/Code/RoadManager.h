@@ -17,7 +17,7 @@ public:
 
 private:
 	int roadCount;
-	int renderCount;
+	int roadRows;
 	RoadSquare* roadSquares[MAXROADS];
 
 	float block_size;

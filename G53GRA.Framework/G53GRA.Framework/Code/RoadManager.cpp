@@ -5,6 +5,7 @@ RoadManager::RoadManager(GLint roadTextureId, int initRoadCount, int block_size)
 	: roadCount(0)
 {
 	this->block_size = block_size;
+	this->roadRows = 3;
 
 	while (roadCount < initRoadCount) {
 		roadSquares[roadCount++] = new RoadSquare(roadTextureId, block_size);
@@ -21,14 +22,21 @@ RoadManager::~RoadManager()
 void RoadManager::Display() {
 	glPushMatrix();
 
-	glTranslated(pos[0], pos[1], pos[2]);
+	float initOffset = block_size*(roadRows - 1) / 2.0f;
+	glTranslated(pos[0]- initOffset, pos[1], pos[2]);
 
-	renderCount = 0;
+	for (int rowCount = 0; rowCount < roadRows; rowCount++) {
+		
+		glPushMatrix();
+		for (int renderCount = 0; renderCount < roadCount; renderCount++) {
+			glTranslated(0, 0, -block_size);
+			roadSquares[renderCount]->Display();
+		}
+		glPopMatrix();
 
-	while (renderCount < roadCount) {
-		glTranslated(0, 0, -block_size);
-		roadSquares[renderCount++]->Display();
+		glTranslated(block_size, 0, 0);
 	}
+
 
 	glPopMatrix();
 }

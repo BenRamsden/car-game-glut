@@ -1,12 +1,12 @@
 #pragma once
 #include "DisplayableObject.h"
 
-class TexturedSquare :
+class MoonSquare :
 	public DisplayableObject
 {
 public:
-	TexturedSquare(GLint surfaceTexId, float block_size, float total_size);
-	virtual ~TexturedSquare();
+	MoonSquare(GLint surfaceTexId, float block_size, float total_size);
+	virtual ~MoonSquare();
 	virtual void Display();
 	GLint texId;
 

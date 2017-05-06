@@ -21,7 +21,7 @@
     <ClCompile Include="Framework\Utility\Texture.cpp" />
     <ClCompile Include="Code\RoadSquare.cpp" />
     <ClCompile Include="Code\RoadManager.cpp" />
-    <ClCompile Include="Code\TexturedSquare.cpp" />
+    <ClCompile Include="Code\MoonSquare.cpp" />
     <ClCompile Include="Code\Light.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -42,7 +42,7 @@
     <ClInclude Include="Framework\Utility\VectorMath.h" />
     <ClInclude Include="Code\RoadSquare.h" />
     <ClInclude Include="Code\RoadManager.h" />
-    <ClInclude Include="Code\TexturedSquare.h" />
+    <ClInclude Include="Code\MoonSquare.h" />
     <ClInclude Include="Code\Light.h" />
   </ItemGroup>
   <ItemGroup>

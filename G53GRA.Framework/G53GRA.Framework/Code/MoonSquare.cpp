@@ -51,7 +51,7 @@ void MoonSquare::Display() {
 void MoonSquare::Update(const double& deltaTime) {
 	static float maxPos = pos[2] + block_size;
 
-	pos[2] += deltaTime * worldProperties->velocity[2];
+	pos[2] += worldProperties->globalVelocity[2]; //delta time pre-accounted for
 
 	if (pos[2] > maxPos) {
 		pos[2] -= block_size;

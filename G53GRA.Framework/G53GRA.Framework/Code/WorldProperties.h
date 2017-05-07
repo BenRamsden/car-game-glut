@@ -1,4 +1,21 @@
 #pragma once
+#include "DisplayableObject.h"
+#include "Animation.h"
+#include "Input.h"
 
-extern float worldSpeed;
+class WorldProperties:
+	public DisplayableObject,
+	public Animation,
+	public Input
+{
+public:
+	WorldProperties();
+	~WorldProperties();
+	virtual void Display();
+	virtual void Update(const double& deltaTime);
+
+	virtual void HandleSpecialKey(int key, int state, int x, int y);
+
+	float velocity[3] = { 0.f, 0.f, 0.f };
+};
 

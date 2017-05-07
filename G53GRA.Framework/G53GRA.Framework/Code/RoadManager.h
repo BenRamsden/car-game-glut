@@ -2,6 +2,7 @@
 #include "DisplayableObject.h"
 #include "Animation.h"
 #include "RoadSquare.h"
+#include "WorldProperties.h"
 #define MAXROADS 25
 
 class RoadManager :
@@ -9,7 +10,7 @@ class RoadManager :
 	public Animation
 {
 public:
-	RoadManager(GLint roadTextureId, int initRoadCount, int block_size);
+	RoadManager(GLint roadTextureId, int initRoadCount, int block_size, WorldProperties *worldProperties);
 	virtual ~RoadManager();
 
 	virtual void Display();
@@ -21,6 +22,7 @@ private:
 	RoadSquare* roadSquares[MAXROADS];
 
 	float block_size;
+	WorldProperties *worldProperties;
 
 };
 

@@ -15,6 +15,7 @@
     <ClCompile Include="Code\MyScene.cpp" />
     <ClCompile Include="Code\SkyBox.cpp" />
     <ClCompile Include="Code\TexturedSphere.cpp" />
+    <ClCompile Include="Code\WorldProperties.cpp" />
     <ClCompile Include="Framework\Engine\Engine.cpp" />
     <ClCompile Include="Framework\Engine\Scene.cpp" />
     <ClCompile Include="Framework\Utility\Camera.cpp" />
@@ -32,6 +33,7 @@
     <ClInclude Include="Code\MyScene.h" />
     <ClInclude Include="Code\SkyBox.h" />
     <ClInclude Include="Code\TexturedSphere.h" />
+    <ClInclude Include="Code\WorldProperties.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />
     <ClInclude Include="Framework\Engine\Scene.h" />
     <ClInclude Include="Framework\Interface\Animation.h" />

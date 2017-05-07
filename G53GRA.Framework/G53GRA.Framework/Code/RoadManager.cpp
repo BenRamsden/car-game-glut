@@ -1,11 +1,12 @@
 #include "RoadManager.h"
 
 
-RoadManager::RoadManager(GLint roadTextureId, int initRoadCount, int block_size)
+RoadManager::RoadManager(GLint roadTextureId, int initRoadCount, int block_size, WorldProperties *worldProperties)
 	: roadCount(0)
 {
 	this->block_size = block_size;
 	this->roadRows = 3;
+	this->worldProperties = worldProperties;
 
 	while (roadCount < initRoadCount) {
 		roadSquares[roadCount++] = new RoadSquare(roadTextureId, block_size);
@@ -42,7 +43,7 @@ void RoadManager::Display() {
 void RoadManager::Update(const double& deltaTime) {
 	static float maxPos = pos[2] + block_size;
 
-	pos[2] += deltaTime * 45.f;
+	pos[2] += deltaTime * worldProperties->velocity[2];
 
 	if (pos[2] > maxPos) {
 		pos[2] -= block_size;

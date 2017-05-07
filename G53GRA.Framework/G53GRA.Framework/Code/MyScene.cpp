@@ -7,6 +7,7 @@
 #include "Flag.h"
 #include "SkyBox.h"
 #include "Lander.h"
+#include "WorldProperties.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -19,23 +20,21 @@ void MyScene::Initialise()
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
 	//Translate, Rotate, Scale (T * R * S)
-	
+
+	WorldProperties *worldProperties = new WorldProperties();	
+	AddObjectToScene(worldProperties);
+
 	LightShow(0,100,-100,150);
 
 	Light *light0 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
 	light0->position(0, 50, 0);
 	AddObjectToScene(light0);
 
-	MaterialSphere *materialSphere = new MaterialSphere();
-	materialSphere->position(30, -13, -100);
-	materialSphere->size(3, 3, 3);
-	AddObjectToScene(materialSphere);
-
-	MoonSquare *moon_square = new MoonSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 64);
+	MoonSquare *moon_square = new MoonSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 64, worldProperties);
 	moon_square->position(0, -30, -100);
 	AddObjectToScene(moon_square);
 
-	RoadManager *roadManager = new RoadManager(Scene::GetTexture("./Textures/Asphalt_Road.bmp"), 15, 45);
+	RoadManager *roadManager = new RoadManager(Scene::GetTexture("./Textures/Asphalt_Road.bmp"), 15, 45, worldProperties);
 	roadManager->position(0, -16, 150);
 	AddObjectToScene(roadManager);
 
@@ -45,22 +44,27 @@ void MyScene::Initialise()
 	earth->SetResolution(2);
 	AddObjectToScene(earth);
 
-	//TODO Apollo 13 moon lander
-	Lander *lander = new Lander();
-	lander->position(0, -10, -100);
-	AddObjectToScene(lander);
-
-	//TODO American Flag
-	Flag *flag = new Flag();
-	flag->position(-20, -16, -50);
-	AddObjectToScene(flag);
-
 	//TODO Stars Sky box/sphere
 	SkyBox *skyBox = new SkyBox(Scene::GetTexture("./Textures/Star_Scape.bmp"));
 	skyBox->position(0, 0, -2000);
 	skyBox->orientation(0, 1, 0);
 	skyBox->size(4000);
 	AddObjectToScene(skyBox);
+
+	/* PROPS */
+
+	Lander *lander = new Lander();
+	lander->position(0, -10, -100);
+	//AddObjectToScene(lander);
+
+	Flag *flag = new Flag();
+	flag->position(-20, -16, -50);
+	//AddObjectToScene(flag);
+
+	MaterialSphere *materialSphere = new MaterialSphere();
+	materialSphere->position(30, -13, -100);
+	materialSphere->size(3, 3, 3);
+	//AddObjectToScene(materialSphere);
 }
 
 void MyScene::Projection()

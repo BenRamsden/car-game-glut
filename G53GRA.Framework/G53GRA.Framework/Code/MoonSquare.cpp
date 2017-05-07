@@ -1,9 +1,10 @@
 #include "MoonSquare.h"
 
-MoonSquare::MoonSquare(GLint surfaceTexId, float block_size)
+MoonSquare::MoonSquare(GLint surfaceTexId, float block_size, WorldProperties *worldProperties)
 {
 	texId = surfaceTexId;
 	this->block_size = block_size;  //breaks if less than 1
+	this->worldProperties = worldProperties;
 }
 
 MoonSquare::~MoonSquare()
@@ -50,7 +51,7 @@ void MoonSquare::Display() {
 void MoonSquare::Update(const double& deltaTime) {
 	static float maxPos = pos[2] + block_size;
 
-	pos[2] += deltaTime * 15.f;
+	pos[2] += deltaTime * worldProperties->velocity[2];
 
 	if (pos[2] > maxPos) {
 		pos[2] -= block_size;

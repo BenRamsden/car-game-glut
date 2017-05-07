@@ -31,8 +31,8 @@ void MyScene::Initialise()
 	materialSphere->size(3, 3, 3);
 	AddObjectToScene(materialSphere);
 
-	MoonSquare *moon_square = new MoonSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 50, 200);
-	moon_square->position(0, -17, -100);
+	MoonSquare *moon_square = new MoonSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 64);
+	moon_square->position(0, -30, -100);
 	AddObjectToScene(moon_square);
 
 	RoadManager *roadManager = new RoadManager(Scene::GetTexture("./Textures/Asphalt_Road.bmp"), 15, 45);

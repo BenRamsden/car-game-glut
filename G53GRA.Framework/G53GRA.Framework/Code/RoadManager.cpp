@@ -27,14 +27,12 @@ void RoadManager::Display() {
 
 	for (int rowCount = 0; rowCount < roadRows; rowCount++) {
 		
-		glPushMatrix();
 		for (int renderCount = 0; renderCount < roadCount; renderCount++) {
 			glTranslated(0, 0, -block_size);
 			roadSquares[renderCount]->Display();
 		}
-		glPopMatrix();
 
-		glTranslated(block_size, 0, 0);
+		glTranslated(block_size, 0, block_size*roadCount); //next x row, back to beginning z
 	}
 
 
@@ -44,7 +42,7 @@ void RoadManager::Display() {
 void RoadManager::Update(const double& deltaTime) {
 	static float maxPos = pos[2] + block_size;
 
-	pos[2] += deltaTime * 15.f;
+	pos[2] += deltaTime * 45.f;
 
 	if (pos[2] > maxPos) {
 		pos[2] -= block_size;

@@ -12,7 +12,7 @@ public:
 	virtual void Update(const double& deltaTime);
 
 private:
-	double rotation = 0;
-	void drawSquare();
+	void Cube::DrawCylinder(GLfloat radius, GLfloat height);
+	float wheelRotation = 0.0f;
 };
 

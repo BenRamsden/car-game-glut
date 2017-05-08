@@ -17,15 +17,12 @@ struct CarMesh {
 void Cube::Display() {
 	glPushMatrix();
 
-	const int numCarMeshes = 17;
+	const int numCarMeshes = 16;
 	CarMesh carMeshes[numCarMeshes] = {
-		{ 15.0f, 1.0f, 0.0f }, //bumper
+		{ 15.0f, 0.0f, 0.0f }, //bumper
 		{ 15.0f, 2.0f, 0.0f },
 		{ 15.0f, 2.0f, -1.0f},
-		{ 15.0f, 4.0f, -1.0f}, //back
-		{ 15.0f, 6.0f, -1.5f},
-		{ 15.0f, 7.0f, -0.5f}, //spoiler
-		{ 15.0f, 7.0f, -1.5f },
+		{ 15.0f, 7.0f, -1.5f }, //back
 		{ 15.0f, 7.0f, -5.0f }, //boot
 		{ 15.0f, 7.5f, -10.0f },
 		{ 15.0f, 13.0f, -15.0f },
@@ -35,7 +32,7 @@ void Cube::Display() {
 		{ 15.0f, 5.0f, -49.0f },
 		{ 15.0f, 2.0f, -49.0f }, //grille
 		{ 15.0f, 2.0f, -50.0f }, //bumper
-		{ 15.0f, 1.0f, -50.0f }
+		{ 15.0f, 0.0f, -50.0f }
 	};
 
 	glTranslated(pos[0], pos[1], pos[2]);
@@ -56,7 +53,7 @@ void Cube::Display() {
 	for (int mesh = 0; mesh < numCarMeshes; mesh++) {
 		carMesh = &carMeshes[mesh];
 		glVertex3f(+carMesh->width / 2, carMesh->y, carMesh->z);
-		glVertex3f(+carMesh->width / 2, 1.0f, carMesh->z);
+		glVertex3f(+carMesh->width / 2, 0.0f, carMesh->z);
 	}
 	glEnd();
 
@@ -64,7 +61,7 @@ void Cube::Display() {
 	glBegin(GL_TRIANGLE_STRIP);
 	for (int mesh = 0; mesh < numCarMeshes; mesh++) {
 		carMesh = &carMeshes[mesh];
-		glVertex3f(-carMesh->width / 2, 1.0f, carMesh->z);
+		glVertex3f(-carMesh->width / 2, 0.0f, carMesh->z);
 		glVertex3f(-carMesh->width / 2, carMesh->y, carMesh->z);
 	}
 	glEnd();

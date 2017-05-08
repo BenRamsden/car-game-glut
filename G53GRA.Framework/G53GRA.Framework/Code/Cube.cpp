@@ -13,7 +13,7 @@ Cube::~Cube()
 void Cube::Display() {
 	glPushMatrix();
 
-	//glTranslated(3, -1, 335);
+	glTranslated(pos[0], pos[1], pos[2]);
 	//glScaled(2.f, 2.f, 2.f);
 	//glRotated(-30 + rotation, 1, 0, 0);
 

@@ -8,6 +8,7 @@
 #include "SkyBox.h"
 #include "Lander.h"
 #include "WorldProperties.h"
+#include "Cube.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -23,6 +24,10 @@ void MyScene::Initialise()
 
 	WorldProperties *worldProperties = new WorldProperties();	
 	AddObjectToScene(worldProperties);
+
+	Cube *cube = new Cube();
+	cube->position(0, -16, -30);
+	AddObjectToScene(cube);
 
 	LightShow(0,100,-100,150);
 

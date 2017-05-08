@@ -19,7 +19,7 @@ public:
 private:
 	int roadCount;
 	int roadRows;
-	RoadSquare* roadSquares[MAXROADS];
+	RoadSquare* roadSquare;
 
 	float block_size;
 	WorldProperties *worldProperties;

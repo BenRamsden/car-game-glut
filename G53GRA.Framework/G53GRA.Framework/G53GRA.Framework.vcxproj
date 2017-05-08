@@ -13,6 +13,7 @@
     <ClCompile Include="Code\main.cpp" />
     <ClCompile Include="Code\MaterialSphere.cpp" />
     <ClCompile Include="Code\MyScene.cpp" />
+    <ClCompile Include="Code\ObjectSpawner.cpp" />
     <ClCompile Include="Code\SkyBox.cpp" />
     <ClCompile Include="Code\TexturedSphere.cpp" />
     <ClCompile Include="Code\WorldProperties.cpp" />
@@ -31,6 +32,7 @@
     <ClInclude Include="Code\Lander.h" />
     <ClInclude Include="Code\MaterialSphere.h" />
     <ClInclude Include="Code\MyScene.h" />
+    <ClInclude Include="Code\ObjectSpawner.h" />
     <ClInclude Include="Code\SkyBox.h" />
     <ClInclude Include="Code\TexturedSphere.h" />
     <ClInclude Include="Code\WorldProperties.h" />

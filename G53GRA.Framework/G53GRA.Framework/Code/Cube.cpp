@@ -137,7 +137,16 @@ void Cube::Display() {
 
 void Cube::Update(const double& deltaTime) {
 	wheelXRotation += worldProperties->globalVelocity[2] * 7;
-	wheelYRotation = fmin(45, worldProperties->globalVelocity[0] / worldProperties->globalVelocity[2] * 60);
+
+	if (worldProperties->globalVelocity[2] == 0.0f) {
+		wheelYRotation = 0;
+	}
+	else {
+		wheelYRotation = worldProperties->globalVelocity[0] / worldProperties->globalVelocity[2] * 60;
+	}
+
+	if (wheelYRotation > 45.0f) wheelYRotation = 45.0f;
+	if (wheelYRotation < -45.0f) wheelYRotation = -45.0f;
 }
 
 void Cube::DrawCylinder (GLfloat radius, GLfloat height)

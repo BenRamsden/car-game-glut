@@ -17,6 +17,9 @@ struct LanderMesh {
 };
 
 void Lander::Display() {
+
+	glPushMatrix();
+
 	int mesh_count = 3;
 	LanderMesh lander_meshes[] = {
 		{ 0, 15, 2 },
@@ -53,6 +56,8 @@ void Lander::Display() {
 		glPopMatrix();
 
 	}
+
+	glPopMatrix();
 
 }
 

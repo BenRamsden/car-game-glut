@@ -3,7 +3,7 @@
 #include "Animation.h"
 #include "RoadSquare.h"
 #include "WorldProperties.h"
-#define MAXROADS 25
+#define MAXROADS 50
 
 class RoadManager :
 	public DisplayableObject,

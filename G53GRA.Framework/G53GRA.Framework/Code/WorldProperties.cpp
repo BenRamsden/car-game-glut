@@ -28,6 +28,9 @@ void WorldProperties::Update(const double& deltaTime)
 	globalVelocity[1] += deltaTime * updateGlobalVelocity[1];
 	globalVelocity[2] += deltaTime * updateGlobalVelocity[2];
 
+	if (globalVelocity[0] > 1.2f) globalVelocity[0] = 1.2f;
+	if (globalVelocity[0] < -1.2f) globalVelocity[0] = -1.2f;
+
 }
 
 void WorldProperties::HandleSpecialKey(int key, int state, int x, int y)

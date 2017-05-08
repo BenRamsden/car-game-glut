@@ -18,7 +18,7 @@ void MoonSquare::Display() {
 	glEnable(GL_TEXTURE_2D);
 	glBindTexture(GL_TEXTURE_2D, texId);
 
-	int rows = 16, cols = 16;
+	int rows = 22, cols = 22;
 	int x_off = -rows / 2 * block_size;
 	int z_off = +cols / 2 * block_size;
 	glTranslatef(pos[0]+x_off, pos[1], pos[2]+z_off);
@@ -32,7 +32,7 @@ void MoonSquare::Display() {
 
 			float centerDistance = sqrt(pow(colCount-(cols/2), 2) + pow(rowCount-(rows/2), 2));
 
-			if (centerDistance < 8) {
+			if (centerDistance < 12) {
 				DrawSquare();
 			}
 		}

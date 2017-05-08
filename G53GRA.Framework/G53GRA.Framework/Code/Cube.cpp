@@ -10,49 +10,53 @@ Cube::~Cube()
 {
 }
 
+struct CarMesh {
+	float width, y, z;
+};
+
 void Cube::Display() {
 	glPushMatrix();
 
+	const int numCarMeshes = 17;
+	CarMesh carMeshes[numCarMeshes] = {
+		{ 15.0f, 1.0f, 0.0f }, //bumper
+		{ 15.0f, 2.0f, 0.0f },
+		{ 15.0f, 2.0f, -1.0f},
+		{ 15.0f, 4.0f, -1.0f}, //back
+		{ 15.0f, 6.0f, -1.5f},
+		{ 15.0f, 7.0f, -0.5f}, //spoiler
+		{ 15.0f, 7.0f, -1.5f },
+		{ 15.0f, 7.0f, -5.0f }, //boot
+		{ 15.0f, 7.5f, -10.0f },
+		{ 15.0f, 13.0f, -15.0f },
+		{ 15.0f, 13.0f, -30.0f }, //roof
+		{ 15.0f, 6.5f, -37.0f }, //windshield
+		{ 15.0f, 6.0f, -48.0f }, //bonnet
+		{ 15.0f, 5.0f, -49.0f },
+		{ 15.0f, 2.0f, -49.0f }, //grille
+		{ 15.0f, 2.0f, -50.0f }, //bumper
+		{ 15.0f, 1.0f, -50.0f }
+	};
+
 	glTranslated(pos[0], pos[1], pos[2]);
-	//glScaled(2.f, 2.f, 2.f);
-	//glRotated(-30 + rotation, 1, 0, 0);
 
-	for (int i = 0; i < 4; i++) {
-		drawSquare();
+	glBegin(GL_QUAD_STRIP);
 
-		glColor3d(i == 0 ? 1 : 0, i == 1 ? 1 : 0, i == 2 ? 1 : 0);
+	CarMesh *carMesh;
 
-		glRotated(90, 0, 1, 0);
+	//Main car frame
+	for (int mesh = 0; mesh < numCarMeshes; mesh++) {
+		carMesh = &carMeshes[mesh];
+		glVertex3f(-carMesh->width / 2, carMesh->y, carMesh->z);
+		glVertex3f(+carMesh->width / 2, carMesh->y, carMesh->z);
 	}
 
-	glColor3d(0.7, 0.5, 0.0);
-	glRotated(90, 0, 0, 1);
-
-	drawSquare();
-
-	glColor3d(0.0, 0.7, 0.5);
-	glRotated(180, 0, 0, 1);
-
-	drawSquare();
+	glEnd();
 
 	glPopMatrix();
 }
 
 
 void Cube::Update(const double& deltaTime) {
-	//rotation += 1;
-}
 
-void Cube::drawSquare() {
-	glBegin(GL_TRIANGLES);
-
-	glVertex3d(-1, -1, -1);
-	glVertex3d(-1, 1, 1);
-	glVertex3d(-1, 1, -1);
-
-	glVertex3d(-1, 1, 1);
-	glVertex3d(-1, -1, -1);
-	glVertex3d(-1, -1, 1);
-
-	glEnd();
 }

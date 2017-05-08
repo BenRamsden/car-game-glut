@@ -43,13 +43,13 @@ void WorldProperties::HandleSpecialKey(int key, int state, int x, int y)
 	}
 
 	if (key == GLUT_KEY_RIGHT) {
-		if (state == 1) updateGlobalPosition[0] = -sqrt(abs(globalVelocity[2])) * 60;
-		if (state == 0) updateGlobalPosition[0] = 0.0f;
+		if (state == 1) updateGlobalVelocity[0] = -sqrt(abs(globalVelocity[2]));
+		if (state == 0) updateGlobalVelocity[0] = 0.0f;
 	}
 
 	if (key == GLUT_KEY_LEFT) {
-		if (state == 1) updateGlobalPosition[0] = sqrt(abs(globalVelocity[2])) * 60;
-		if (state == 0) updateGlobalPosition[0] = 0.0f;
+		if (state == 1) updateGlobalVelocity[0] = sqrt(abs(globalVelocity[2]));
+		if (state == 0) updateGlobalVelocity[0] = 0.0f;
 	}
 
 }

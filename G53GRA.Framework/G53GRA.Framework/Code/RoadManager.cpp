@@ -39,7 +39,7 @@ void RoadManager::Display() {
 void RoadManager::Update(const double& deltaTime) {
 	static float maxPos = pos[2] + block_size;
 
-	pos[0] = worldProperties->globalPosition[0];
+	pos[0] += worldProperties->globalVelocity[0];
 
 	pos[2] += worldProperties->globalVelocity[2]; //delta time pre-accounted for
 

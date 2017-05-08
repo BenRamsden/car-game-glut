@@ -25,7 +25,7 @@ void MyScene::Initialise()
 	WorldProperties *worldProperties = new WorldProperties();	
 	AddObjectToScene(worldProperties);
 
-	Cube *cube = new Cube();
+	Cube *cube = new Cube(worldProperties);
 	cube->position(0, -16, -30);
 	AddObjectToScene(cube);
 

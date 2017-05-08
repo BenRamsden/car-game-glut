@@ -1,9 +1,10 @@
-#include "Cube.h"
 #define _USE_MATH_DEFINES
 #include <math.h>
+#include "Cube.h"
 
-Cube::Cube()
+Cube::Cube(WorldProperties *worldProperties)
 {
+	this->worldProperties = worldProperties;
 }
 
 
@@ -98,7 +99,7 @@ void Cube::Display() {
 	//Back right tyre
 	glPushMatrix();
 		glTranslatef(wheelXOffset, 0.0f, backWheelZOffset);
-		glRotatef(wheelRotation, -1, 0, 0);
+		glRotatef(wheelXRotation, -1, 0, 0);
 		glRotatef(90, 0, 1, 0);
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
@@ -106,7 +107,8 @@ void Cube::Display() {
 	//Front right tyre
 	glPushMatrix();
 		glTranslatef(wheelXOffset, 0.0f, frontWheelZOffset);
-		glRotatef(wheelRotation, -1, 0, 0);
+		glRotatef(wheelYRotation, 0, 1, 0);
+		glRotatef(wheelXRotation, -1, 0, 0);
 		glRotatef(90, 0, 1, 0);
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
@@ -114,7 +116,7 @@ void Cube::Display() {
 	//Back left tyre
 	glPushMatrix();
 		glTranslatef(-wheelXOffset, 0.0f, backWheelZOffset);
-		glRotatef(wheelRotation, -1, 0, 0);
+		glRotatef(wheelXRotation, -1, 0, 0);
 		glRotatef(90, 0, -1, 0);
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
@@ -122,7 +124,8 @@ void Cube::Display() {
 	//Front left tyre
 	glPushMatrix();
 		glTranslatef(-wheelXOffset, 0.0f, frontWheelZOffset);
-		glRotatef(wheelRotation, -1, 0, 0);
+		glRotatef(wheelYRotation, 0, 1, 0);
+		glRotatef(wheelXRotation, -1, 0, 0);
 		glRotatef(90, 0, -1, 0);
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
@@ -133,7 +136,8 @@ void Cube::Display() {
 
 
 void Cube::Update(const double& deltaTime) {
-	wheelRotation += 1;
+	wheelXRotation += worldProperties->globalVelocity[2] * 7;
+	wheelYRotation = fmin(45, worldProperties->globalVelocity[0] / worldProperties->globalVelocity[2] * 60);
 }
 
 void Cube::DrawCylinder (GLfloat radius, GLfloat height)
@@ -163,7 +167,7 @@ void Cube::DrawCylinder (GLfloat radius, GLfloat height)
 	//Draw the end cap
 	glBegin(GL_TRIANGLE_FAN);
 	glVertex3f(0.0f, 0.0f, height);
-	glNormal3f(1.0f, 0.0f, 0.0f);
+	glNormal3f(-1.0f, 0.0f, 0.0f);
 	for (GLfloat angle = 0.0f; angle < target_angle; angle += step) {
 		x = radius * cos(angle);
 		y = radius * sin(angle);

@@ -34,11 +34,11 @@ void MyScene::Initialise()
 	AddObjectToScene(cube);
 
 	Light *light1 = new Light(Light::RED_LIGHT, GL_LIGHT1);
-	light1->position(20, 0, -30);
+	light1->position(5, -10, -80);
 	AddObjectToScene(light1);
 
 	Light *light2 = new Light(Light::GREEN_LIGHT, GL_LIGHT2);
-	light2->position(-20, 0, -30);
+	light2->position(-5, -10, -80);
 	AddObjectToScene(light2);
 
 	//Light *light3 = new Light(Light::BLUE_LIGHT, GL_LIGHT3);

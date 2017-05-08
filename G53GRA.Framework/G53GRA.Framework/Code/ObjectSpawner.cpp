@@ -21,7 +21,7 @@ void ObjectSpawner::Display()
 {
 	for (int i = 0; i < MAX_COLLISION_OBJECTS; i++) {
 		float random = ((float)rand()) / RAND_MAX;
-		printf("%f\n", random);
+		//printf("%f\n", random);
 
 		if (random < 0.00003f * worldProperties->globalVelocity[2]) {
 			collisionProperties[i].enabled = true;

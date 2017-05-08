@@ -33,7 +33,18 @@ void MyScene::Initialise()
 	cube->position(0, -16, -30);
 	AddObjectToScene(cube);
 
-	//LightShow(0,100,-100,150);
+	Light *light1 = new Light(Light::RED_LIGHT, GL_LIGHT1);
+	light1->position(20, 0, -30);
+	AddObjectToScene(light1);
+
+	Light *light2 = new Light(Light::GREEN_LIGHT, GL_LIGHT2);
+	light2->position(-20, 0, -30);
+	AddObjectToScene(light2);
+
+	//Light *light3 = new Light(Light::BLUE_LIGHT, GL_LIGHT3);
+	//light3->position(x, y, z);
+	//AddObjectToScene(light3);
+
 
 	Light *light0 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
 	light0->position(0, 50, 0);
@@ -79,24 +90,4 @@ void MyScene::Initialise()
 void MyScene::Projection()
 {
 	gluPerspective(static_cast<GLdouble>(60.0), static_cast<GLdouble>(windowWidth) / static_cast<GLdouble>(windowHeight), static_cast<GLdouble>(1.0), static_cast<GLdouble>(4000.0));
-}
-
-void MyScene::LightShow(float x, float y, float z, float x_step) {
-	x -= x_step;
-
-	Light *light1 = new Light(Light::RED_LIGHT, GL_LIGHT1);
-	light1->position(x, y, z);
-	AddObjectToScene(light1);
-
-	x += x_step;
-
-	Light *light2 = new Light(Light::GREEN_LIGHT, GL_LIGHT2);
-	light2->position(x, y, z);
-	AddObjectToScene(light2);
-
-	x += x_step;
-
-	Light *light3 = new Light(Light::BLUE_LIGHT, GL_LIGHT3);
-	light3->position(x, y, z);
-	AddObjectToScene(light3);
 }

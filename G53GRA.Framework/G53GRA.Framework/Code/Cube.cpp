@@ -40,17 +40,33 @@ void Cube::Display() {
 
 	glTranslated(pos[0], pos[1], pos[2]);
 
-	glBegin(GL_QUAD_STRIP);
-
 	CarMesh *carMesh;
 
 	//Main car frame
+	glBegin(GL_QUAD_STRIP);
 	for (int mesh = 0; mesh < numCarMeshes; mesh++) {
 		carMesh = &carMeshes[mesh];
 		glVertex3f(-carMesh->width / 2, carMesh->y, carMesh->z);
 		glVertex3f(+carMesh->width / 2, carMesh->y, carMesh->z);
 	}
+	glEnd();
 
+	//Right Side
+	glBegin(GL_TRIANGLE_STRIP);
+	for (int mesh = 0; mesh < numCarMeshes; mesh++) {
+		carMesh = &carMeshes[mesh];
+		glVertex3f(+carMesh->width / 2, carMesh->y, carMesh->z);
+		glVertex3f(+carMesh->width / 2, 1.0f, carMesh->z);
+	}
+	glEnd();
+
+	//Left Side
+	glBegin(GL_TRIANGLE_STRIP);
+	for (int mesh = 0; mesh < numCarMeshes; mesh++) {
+		carMesh = &carMeshes[mesh];
+		glVertex3f(-carMesh->width / 2, 1.0f, carMesh->z);
+		glVertex3f(-carMesh->width / 2, carMesh->y, carMesh->z);
+	}
 	glEnd();
 
 	glPopMatrix();

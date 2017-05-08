@@ -24,7 +24,7 @@ void MaterialSphere::Display() {
 
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	glPushMatrix();
-
+	
 	glTranslatef(pos[0], pos[1], pos[2]);
 	//glRotatef(90, rotation[0], rotation[1], rotation[2]);
 	glScalef(scale[0], scale[1], scale[2]);

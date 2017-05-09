@@ -50,5 +50,5 @@ void ObjectSpawner::Update(const double& deltaTime)
 }
 
 void ObjectSpawner::resetCollisionProperty(int index) {
-	collisionProperties[index] = { index * 9.0f - (((MAX_COLLISION_OBJECTS - 1) * 9.0f) / 2), -12.0f, -2000.0f, false };
+	collisionProperties[index] = { index * 9.0f - (((MAX_COLLISION_OBJECTS - 1) * 9.0f) / 2), -12.0f, -1300.f, false };
 }

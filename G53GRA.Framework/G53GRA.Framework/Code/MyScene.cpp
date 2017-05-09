@@ -37,7 +37,7 @@ void MyScene::Initialise()
 	moon_square->position(0, -30, -100);
 	AddObjectToScene(moon_square);
 
-	RoadManager *roadManager = new RoadManager(Scene::GetTexture("./Textures/Asphalt_Road.bmp"), 50, 45, worldProperties);
+	RoadManager *roadManager = new RoadManager(Scene::GetTexture("./Textures/Asphalt_Road.bmp"), 30, 45, worldProperties);
 	roadManager->position(0, -16, 150);
 	AddObjectToScene(roadManager);
 
@@ -64,10 +64,10 @@ void MyScene::Initialise()
 	flag->position(-20, -16, -50);
 	//AddObjectToScene(flag);
 
-	MaterialSphere *materialSphere = new MaterialSphere();
-	materialSphere->position(30, -13, -100);
+	MaterialSphere *materialSphere = new MaterialSphere(1000.f, 1.0);
+	materialSphere->position(0.0f, 1000.f, -1000.f);
 	materialSphere->size(3, 3, 3);
-	//AddObjectToScene(materialSphere);
+	AddObjectToScene(materialSphere);
 }
 
 void MyScene::Projection()

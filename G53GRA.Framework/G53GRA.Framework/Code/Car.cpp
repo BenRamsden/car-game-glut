@@ -1,8 +1,8 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
-#include "Cube.h"
+#include "Car.h"
 
-Cube::Cube(WorldProperties *worldProperties)
+Car::Car(WorldProperties *worldProperties)
 {
 	this->worldProperties = worldProperties;
 
@@ -14,7 +14,7 @@ Cube::Cube(WorldProperties *worldProperties)
 }
 
 
-Cube::~Cube()
+Car::~Car()
 {
 }
 
@@ -22,7 +22,7 @@ struct CarMesh {
 	float width, y, z;
 };
 
-void Cube::Display() {
+void Car::Display() {
 	glPushMatrix();
 
 	glTranslated(pos[0], pos[1] + 3.5f, pos[2]);
@@ -154,7 +154,7 @@ void Cube::Display() {
 }
 
 
-void Cube::Update(const double& deltaTime) {
+void Car::Update(const double& deltaTime) {
 	wheelXRotation += worldProperties->globalVelocity[2] * 7;
 
 	if (worldProperties->globalVelocity[2] == 0.0f) {
@@ -168,7 +168,7 @@ void Cube::Update(const double& deltaTime) {
 	if (wheelYRotation < -45.0f) wheelYRotation = -45.0f;
 }
 
-void Cube::DrawCylinder (GLfloat radius, GLfloat height)
+void Car::DrawCylinder (GLfloat radius, GLfloat height)
 {
 	GLfloat x, y;
 	GLfloat step = 0.5f;

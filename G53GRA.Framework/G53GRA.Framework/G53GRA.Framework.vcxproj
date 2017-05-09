@@ -7,7 +7,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Code\Cube.cpp" />
+    <ClCompile Include="Code\Car.cpp" />
     <ClCompile Include="Code\Flag.cpp" />
     <ClCompile Include="Code\Lander.cpp" />
     <ClCompile Include="Code\main.cpp" />
@@ -27,7 +27,7 @@
     <ClCompile Include="Code\Light.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Code\Cube.h" />
+    <ClInclude Include="Code\Car.h" />
     <ClInclude Include="Code\Flag.h" />
     <ClInclude Include="Code\Lander.h" />
     <ClInclude Include="Code\MaterialSphere.h" />

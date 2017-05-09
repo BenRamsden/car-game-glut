@@ -8,7 +8,7 @@
 #include "SkyBox.h"
 #include "Lander.h"
 #include "WorldProperties.h"
-#include "Cube.h"
+#include "Car.h"
 #include "ObjectSpawner.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
@@ -29,9 +29,9 @@ void MyScene::Initialise()
 	ObjectSpawner *objectSpawner = new ObjectSpawner(worldProperties);
 	AddObjectToScene(objectSpawner);
 
-	Cube *cube = new Cube(worldProperties);
-	cube->position(0, -16, -30);
-	AddObjectToScene(cube);
+	Car *car = new Car(worldProperties);
+	car->position(0, -16, -30);
+	AddObjectToScene(car);
 
 	MoonSquare *moon_square = new MoonSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 64, worldProperties);
 	moon_square->position(0, -30, -100);

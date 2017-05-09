@@ -46,8 +46,8 @@ void Light::Display() {
 	glLightfv(mLight, GL_DIFFUSE, gl_diffuse);
 	glLightfv(mLight, GL_SPECULAR, gl_specular);
 	glLightfv(mLight, GL_POSITION, gl_position);
-	//glLightfv(mLight, GL_SPOT_DIRECTION, gl_direction);
-	//glLightfv(mLight, GL_SPOT_CUTOFF, &gl_cutoff);
+	glLightfv(mLight, GL_SPOT_DIRECTION, gl_direction);
+	glLightfv(mLight, GL_SPOT_CUTOFF, &gl_cutoff);
 
 	glLightf(mLight, GL_CONSTANT_ATTENUATION, 0.5f);
 	//glLightf(mLight, GL_LINEAR_ATTENUATION, 0.01f);

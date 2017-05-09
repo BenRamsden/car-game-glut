@@ -22,8 +22,8 @@ private:
 	GLfloat gl_position[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 	GLfloat gl_ambience[4] = { 0.0f, 0.0f, 0.0f, 1.0f };
 	GLfloat gl_specular[4] = { 1.0f, 1.0f, 1.0f, 1.0f };
-	//GLfloat gl_direction[4] = { 0.0f, -1.0f, 0.0f, 1.0f }; //{ 0.0f, 0.0f, -1.0f, 1.0f };
-	//GLfloat gl_cutoff = 180.0f;
+	GLfloat gl_direction[4] = { 0.0f, 0.0f, -1.0f, 1.0f };
+	GLfloat gl_cutoff = 60.0f;
 
 };
 

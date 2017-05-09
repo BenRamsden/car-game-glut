@@ -41,15 +41,6 @@ void MyScene::Initialise()
 	light2->position(-5, -10, -80);
 	AddObjectToScene(light2);
 
-	//Light *light3 = new Light(Light::BLUE_LIGHT, GL_LIGHT3);
-	//light3->position(x, y, z);
-	//AddObjectToScene(light3);
-
-
-	Light *light0 = new Light(Light::WHITE_LIGHT, GL_LIGHT0);
-	light0->position(0, 50, 0);
-	AddObjectToScene(light0);
-
 	MoonSquare *moon_square = new MoonSquare(Scene::GetTexture("./Textures/Moon_Surface2.bmp"), 64, worldProperties);
 	moon_square->position(0, -30, -100);
 	AddObjectToScene(moon_square);

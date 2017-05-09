@@ -20,6 +20,8 @@ void Cube::Display() {
 	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	glPushMatrix();
 
+	//glEnable(GL_COLOR_MATERIAL);
+
 	//MATERIALS
 	GLfloat no_mat[] = { 0.0f, 0.0f, 0.0f, 1.0f };
 	GLfloat mat_ambient[] = { 0.7f, 0.7f, 0.7f, 1.0f };
@@ -66,6 +68,7 @@ void Cube::Display() {
 
 	CarMesh *carMesh;
 
+	glColor3f(0.7f, 0.1f, 0.1f);
 	//Main car frame
 	glBegin(GL_QUAD_STRIP);
 	glNormal3f(0, 1, 0);
@@ -76,6 +79,7 @@ void Cube::Display() {
 	}
 	glEnd();
 
+	glColor3f(0.5f, 0.1f, 0.1f);
 	//Right Side
 	glBegin(GL_TRIANGLE_STRIP);
 	glNormal3f(1, 0, 0);
@@ -86,6 +90,7 @@ void Cube::Display() {
 	}
 	glEnd();
 
+	glColor3f(0.5f, 0.1f, 0.1f);
 	//Left Side
 	glBegin(GL_TRIANGLE_STRIP);
 	glNormal3f(-1, 0, 0);
@@ -96,6 +101,7 @@ void Cube::Display() {
 	}
 	glEnd();
 
+	glColor3f(0.2f, 0.2f, 0.2f);
 	//Back right tyre
 	glPushMatrix();
 		glTranslatef(wheelXOffset, 0.0f, backWheelZOffset);
@@ -104,6 +110,7 @@ void Cube::Display() {
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
 
+	glColor3f(0.2f, 0.2f, 0.2f);
 	//Front right tyre
 	glPushMatrix();
 		glTranslatef(wheelXOffset, 0.0f, frontWheelZOffset);
@@ -113,6 +120,7 @@ void Cube::Display() {
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
 
+	glColor3f(0.2f, 0.2f, 0.2f);
 	//Back left tyre
 	glPushMatrix();
 		glTranslatef(-wheelXOffset, 0.0f, backWheelZOffset);
@@ -121,6 +129,7 @@ void Cube::Display() {
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
 
+	glColor3f(0.2f, 0.2f, 0.2f);
 	//Front left tyre
 	glPushMatrix();
 		glTranslatef(-wheelXOffset, 0.0f, frontWheelZOffset);

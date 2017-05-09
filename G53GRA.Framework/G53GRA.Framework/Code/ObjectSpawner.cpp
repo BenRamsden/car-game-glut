@@ -4,9 +4,13 @@
 ObjectSpawner::ObjectSpawner(WorldProperties *worldProperties)
 {
 	this->worldProperties = worldProperties;
-	for (int i = 0; i < MAX_COLLISION_OBJECTS; i++) {
-		collisionObjects[i] = new Lander();
-		resetCollisionProperty(i);
+	for (int index = 0; index < MAX_COLLISION_OBJECTS; index++) {
+		collisionObjects[index] = new Lander();
+
+		collisionProperties[index].x = index * 9.0f - (((MAX_COLLISION_OBJECTS - 1) * 9.0f) / 2);
+		collisionProperties[index].y = -12.0f;
+		resetCollisionProperty(index);
+
 	}
 
 }
@@ -50,5 +54,6 @@ void ObjectSpawner::Update(const double& deltaTime)
 }
 
 void ObjectSpawner::resetCollisionProperty(int index) {
-	collisionProperties[index] = { index * 9.0f - (((MAX_COLLISION_OBJECTS - 1) * 9.0f) / 2), -12.0f, -1300.f, false };
+	collisionProperties[index].z = -1300.f;
+	collisionProperties[index].enabled = false;
 }

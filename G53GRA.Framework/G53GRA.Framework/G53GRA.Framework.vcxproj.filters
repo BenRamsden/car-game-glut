@@ -154,5 +154,17 @@
     <Image Include="Textures\Moon_Surface2.bmp">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Textures\Star_Scape.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\Starscape.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\..\..\..\Users\benra\Desktop\american.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\american.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

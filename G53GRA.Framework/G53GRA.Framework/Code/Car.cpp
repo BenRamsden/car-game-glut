@@ -78,7 +78,7 @@ void Car::Display() {
 
 	CarMesh *carMesh;
 
-	glColor3f(0.7f, 0.1f, 0.1f);
+	glColor3f(0.0f, 0.0f, 1.0f);
 	//Main car frame
 	glBegin(GL_QUAD_STRIP);
 	glNormal3f(0, 1, 0);
@@ -89,7 +89,7 @@ void Car::Display() {
 	}
 	glEnd();
 
-	glColor3f(0.5f, 0.1f, 0.1f);
+	glColor3f(0.1f, 0.1f, 1.0f);
 	//Right Side
 	glBegin(GL_TRIANGLE_STRIP);
 	glNormal3f(1, 0, 0);
@@ -100,7 +100,7 @@ void Car::Display() {
 	}
 	glEnd();
 
-	glColor3f(0.5f, 0.1f, 0.1f);
+	glColor3f(0.1f, 0.1f, 1.0f);
 	//Left Side
 	glBegin(GL_TRIANGLE_STRIP);
 	glNormal3f(-1, 0, 0);

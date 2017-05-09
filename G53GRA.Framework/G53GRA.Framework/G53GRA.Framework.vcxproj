@@ -50,11 +50,15 @@
     <ClInclude Include="Code\Light.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="..\..\..\..\Users\benra\Desktop\american.bmp" />
     <Image Include="Textures\alpha_clouds.bmp" />
     <Image Include="Textures\alpha_map.bmp" />
+    <Image Include="Textures\american.bmp" />
     <Image Include="Textures\Asphalt_Road.bmp" />
     <Image Include="Textures\Moon_Surface2.bmp" />
     <Image Include="Textures\Rocky_Mountain.bmp" />
+    <Image Include="Textures\Starscape.png" />
+    <Image Include="Textures\Star_Scape.bmp" />
     <Image Include="Textures\Tree_Leaves.bmp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

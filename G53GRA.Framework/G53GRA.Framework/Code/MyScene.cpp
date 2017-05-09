@@ -61,7 +61,7 @@ void MyScene::Initialise()
 	lander->position(0, -10, -100);
 	//AddObjectToScene(lander);
 
-	Flag *flag = new Flag();
+	Flag *flag = new Flag(Scene::GetTexture("./Textures/american.bmp"));
 	flag->position(-20, -16, -50);
 	//AddObjectToScene(flag);
 

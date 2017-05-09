@@ -4,6 +4,8 @@
 
 ObjectSpawner::ObjectSpawner(WorldProperties *worldProperties)
 {
+	GLint flagTex = Scene::GetTexture("./Textures/american.bmp");
+
 	this->worldProperties = worldProperties;
 	for (int index = 0; index < MAX_COLLISION_OBJECTS; index++) {
 
@@ -14,7 +16,7 @@ ObjectSpawner::ObjectSpawner(WorldProperties *worldProperties)
 			collisionObjects[index] = new Lander();
 		}
 		else {
-			collisionObjects[index] = new Flag();
+			collisionObjects[index] = new Flag(flagTex);
 		}
 
 		collisionProperties[index].x = index * 9.0f - (((MAX_COLLISION_OBJECTS - 1) * 9.0f) / 2);
@@ -53,9 +55,9 @@ void ObjectSpawner::Display()
 			collisionObjects[i]->Display();
 		}
 
+		//collision detection
 		float x_distance = abs(collisionProperties[i].x - pos[0]);
 		float z_distance = abs(collisionProperties[i].z - pos[2]);
-
 		float center_distance = sqrt(pow(x_distance, 2) + pow(z_distance, 2));
 
 		if (center_distance < 20.f) {

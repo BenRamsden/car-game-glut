@@ -27,6 +27,7 @@ void MyScene::Initialise()
 	AddObjectToScene(worldProperties);
 
 	ObjectSpawner *objectSpawner = new ObjectSpawner(worldProperties);
+	objectSpawner->position(0, -16, -60);  //must be at position of front of car, to detect collisions
 	AddObjectToScene(objectSpawner);
 
 	Car *car = new Car(worldProperties);

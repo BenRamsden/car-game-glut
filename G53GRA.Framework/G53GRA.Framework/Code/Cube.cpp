@@ -65,6 +65,7 @@ void Cube::Display() {
 	};
 
 	glTranslated(pos[0], pos[1]+3.5f, pos[2]);
+	glRotatef(wheelYRotation/3, 0, 1, 0); //make car turn with wheels
 
 	CarMesh *carMesh;
 

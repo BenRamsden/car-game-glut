@@ -2,6 +2,7 @@
 #include "DisplayableObject.h"
 #include "Animation.h"
 #include "WorldProperties.h"
+#include "Light.h"
 
 class Cube :
 	public DisplayableObject,
@@ -18,5 +19,8 @@ private:
 	float wheelXRotation = 0.0f;
 	float wheelYRotation = 0.0f;
 	WorldProperties *worldProperties;
+
+	Light *light1;
+	Light *light2;
 };
 

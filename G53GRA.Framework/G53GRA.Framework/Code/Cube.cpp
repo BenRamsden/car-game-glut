@@ -5,6 +5,12 @@
 Cube::Cube(WorldProperties *worldProperties)
 {
 	this->worldProperties = worldProperties;
+
+	light1 = new Light(Light::RED_LIGHT, GL_LIGHT1);
+	light1->position(5, 4, -49);
+
+	light2 = new Light(Light::GREEN_LIGHT, GL_LIGHT2);
+	light2->position(-5, 4, -49);
 }
 
 
@@ -17,9 +23,15 @@ struct CarMesh {
 };
 
 void Cube::Display() {
-	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	glPushMatrix();
 
+	glTranslated(pos[0], pos[1] + 3.5f, pos[2]);
+	glRotatef(wheelYRotation / 3, 0, 1, 0); //make car turn with wheels
+
+	light1->Display();
+	light2->Display();
+
+	glPushAttrib(GL_ALL_ATTRIB_BITS);
 	//glEnable(GL_COLOR_MATERIAL);
 
 	//MATERIALS
@@ -63,9 +75,6 @@ void Cube::Display() {
 		{ carWidth, 2.0f, -50.0f }, //bumper
 		{ carWidth, 0.0f, -50.0f }
 	};
-
-	glTranslated(pos[0], pos[1]+3.5f, pos[2]);
-	glRotatef(wheelYRotation/3, 0, 1, 0); //make car turn with wheels
 
 	CarMesh *carMesh;
 

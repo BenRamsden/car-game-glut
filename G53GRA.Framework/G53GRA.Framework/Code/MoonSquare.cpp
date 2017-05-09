@@ -60,15 +60,31 @@ void MoonSquare::Update(const double& deltaTime) {
 
 void MoonSquare::DrawSquare() {
 	float offset_size = block_size / 2;
+	float increment = offset_size / 8;
+	float range = offset_size * 2;
 
 	glBegin(GL_QUADS);
-	glTexCoord2f(1.0f, 0.0f);
-	glVertex3d(-offset_size, 0, +offset_size);
-	glTexCoord2f(1.0f, 1.0f);
-	glVertex3d(+offset_size, 0, +offset_size);
-	glTexCoord2f(0.0f, 1.0f);
-	glVertex3d(+offset_size, 0, -offset_size);
-	glTexCoord2f(0.0f, 0.0f);
-	glVertex3d(-offset_size, 0, -offset_size);
+
+	for (float x = -offset_size; x <= offset_size; x += increment)
+	{
+		for (float y = -offset_size; y <= offset_size; y += increment)
+		{
+			float tex_x = offset_size + x;
+			float tex_y = offset_size + y;
+
+			glTexCoord2f(tex_x / range, tex_y / range);
+			glVertex3f(x, 0, y);
+
+			glTexCoord2f(tex_x / range, (tex_y + increment) / range);
+			glVertex3f(x, 0, y + increment);
+
+			glTexCoord2f((tex_x + increment) / range, (tex_y + increment) / range);
+			glVertex3f(x + increment, 0, y + increment);
+
+			glTexCoord2f((tex_x + increment) / range, tex_y / range);
+			glVertex3f(x + increment, 0, y);
+		}
+	}
+
 	glEnd();
 }

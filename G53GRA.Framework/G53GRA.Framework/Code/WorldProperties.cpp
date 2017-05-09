@@ -18,11 +18,6 @@ void WorldProperties::Display()
 
 void WorldProperties::Update(const double& deltaTime)
 {
-	//steering
-	globalPosition[0] += deltaTime * updateGlobalPosition[0];
-	globalPosition[1] += deltaTime * updateGlobalPosition[1];
-	globalPosition[2] += deltaTime * updateGlobalPosition[2];
-
 	//acceleration
 	globalVelocity[0] += deltaTime * updateGlobalVelocity[0];
 	globalVelocity[1] += deltaTime * updateGlobalVelocity[1];
@@ -31,6 +26,7 @@ void WorldProperties::Update(const double& deltaTime)
 	if (globalVelocity[0] > 1.2f) globalVelocity[0] = 1.2f;
 	if (globalVelocity[0] < -1.2f) globalVelocity[0] = -1.2f;
 
+	if (globalVelocity[2] > 20.f) globalVelocity[2] = 20.f;
 }
 
 void WorldProperties::HandleSpecialKey(int key, int state, int x, int y)

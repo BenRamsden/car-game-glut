@@ -41,6 +41,14 @@ void RoadManager::Update(const double& deltaTime) {
 
 	pos[0] += worldProperties->globalVelocity[0];
 
+	if (pos[0] > 60.f) {
+		worldProperties->globalVelocity[0] -= 1.f;  //stop car bouncing off edge of road
+	}
+
+	if (pos[0] < -60.f) {
+		worldProperties->globalVelocity[0] += 1.f; //stop car bouncing off edge of road
+	}
+
 	pos[2] += worldProperties->globalVelocity[2]; //delta time pre-accounted for
 
 	if (pos[2] > maxPos) {

@@ -23,5 +23,7 @@ private:
 
 	DisplayableObject *collisionObjects[MAX_COLLISION_OBJECTS];
 	int collisionObjectCount = 0;
+
+	void resetCollisionProperty(int index);
 };
 

@@ -10,8 +10,8 @@ Camera::Camera() : wKey(0), sKey(0), aKey(0), dKey(0), currentButton(0), mouseX(
 void Camera::Reset(){
 	// set the camera position to start at (0,0,0)
 	eyePosition[0] = 0.0f;
-	eyePosition[1] = 0.0f;
-	eyePosition[2] = 10.f; // 0.5f * static_cast<float>(Scene::GetWindowHeight()) / static_cast<float>(tan(M_PI / 6.0));//0.0f;
+	eyePosition[1] = 5.0f;
+	eyePosition[2] = -53.f; // 0.5f * static_cast<float>(Scene::GetWindowHeight()) / static_cast<float>(tan(M_PI / 6.0));//0.0f;
 
 	// set the view direction vector of the camera to be (0,0,-1)
 	vd[0] = 0.0f;

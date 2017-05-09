@@ -101,7 +101,7 @@ void Cube::Display() {
 	}
 	glEnd();
 
-	glColor3f(0.2f, 0.2f, 0.2f);
+	glColor3f(0.0f, 0.0f, 0.0f);
 	//Back right tyre
 	glPushMatrix();
 		glTranslatef(wheelXOffset, 0.0f, backWheelZOffset);
@@ -110,7 +110,7 @@ void Cube::Display() {
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
 
-	glColor3f(0.2f, 0.2f, 0.2f);
+	glColor3f(0.0f, 0.0f, 0.0f);
 	//Front right tyre
 	glPushMatrix();
 		glTranslatef(wheelXOffset, 0.0f, frontWheelZOffset);
@@ -120,7 +120,7 @@ void Cube::Display() {
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
 
-	glColor3f(0.2f, 0.2f, 0.2f);
+	glColor3f(0.0f, 0.0f, 0.0f);
 	//Back left tyre
 	glPushMatrix();
 		glTranslatef(-wheelXOffset, 0.0f, backWheelZOffset);
@@ -129,7 +129,7 @@ void Cube::Display() {
 		DrawCylinder(wheelSize, wheelSize);
 	glPopMatrix();
 
-	glColor3f(0.2f, 0.2f, 0.2f);
+	glColor3f(0.0f, 0.0f, 0.0f);
 	//Front left tyre
 	glPushMatrix();
 		glTranslatef(-wheelXOffset, 0.0f, frontWheelZOffset);

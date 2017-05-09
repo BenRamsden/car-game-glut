@@ -6,8 +6,7 @@ ObjectSpawner::ObjectSpawner(WorldProperties *worldProperties)
 	this->worldProperties = worldProperties;
 	for (int i = 0; i < MAX_COLLISION_OBJECTS; i++) {
 		collisionObjects[i] = new Lander();
-		float x_range = (MAX_COLLISION_OBJECTS-1) * 9.0f;
-		collisionProperties[i] = { i * 9.0f - (x_range / 2), -12.0f, -2000.0f };
+		resetCollisionProperty(i);
 	}
 
 }
@@ -31,6 +30,10 @@ void ObjectSpawner::Display()
 		glTranslatef(collisionProperties[i].x, collisionProperties[i].y, collisionProperties[i].z);
 		collisionProperties[i].x += worldProperties->globalVelocity[0];
 
+		if (collisionProperties[i].z > 200.0f) {
+			resetCollisionProperty(i);
+		}
+
 		if (collisionProperties[i].enabled) {
 			collisionProperties[i].z += worldProperties->globalVelocity[2];
 			collisionObjects[i]->Display();
@@ -44,4 +47,8 @@ void ObjectSpawner::Display()
 void ObjectSpawner::Update(const double& deltaTime)
 {
 	
+}
+
+void ObjectSpawner::resetCollisionProperty(int index) {
+	collisionProperties[index] = { index * 9.0f - (((MAX_COLLISION_OBJECTS - 1) * 9.0f) / 2), -12.0f, -2000.0f, false };
 }

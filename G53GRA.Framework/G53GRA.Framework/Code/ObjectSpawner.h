@@ -7,7 +7,7 @@ class ObjectSpawner :
 	public DisplayableObject
 {
 public:
-	ObjectSpawner(WorldProperties *worldProperties);
+	ObjectSpawner(WorldProperties *worldProperties, GLint flagTex);
 	virtual ~ObjectSpawner();
 	virtual void Display();
 	virtual void Update(const double& deltaTime);

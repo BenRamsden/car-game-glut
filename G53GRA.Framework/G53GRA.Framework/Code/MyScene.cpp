@@ -26,7 +26,7 @@ void MyScene::Initialise()
 	WorldProperties *worldProperties = new WorldProperties();	
 	AddObjectToScene(worldProperties);
 
-	ObjectSpawner *objectSpawner = new ObjectSpawner(worldProperties);
+	ObjectSpawner *objectSpawner = new ObjectSpawner(worldProperties, Scene::GetTexture("./Textures/american.bmp"));
 	objectSpawner->position(0, -16, -60);  //must be at position of front of car, to detect collisions
 	AddObjectToScene(objectSpawner);
 

@@ -2,10 +2,8 @@
 #include "Lander.h"
 #include "Flag.h"
 
-ObjectSpawner::ObjectSpawner(WorldProperties *worldProperties)
+ObjectSpawner::ObjectSpawner(WorldProperties *worldProperties, GLint flagTex)
 {
-	GLint flagTex = Scene::GetTexture("./Textures/american.bmp");
-
 	this->worldProperties = worldProperties;
 	for (int index = 0; index < MAX_COLLISION_OBJECTS; index++) {
 

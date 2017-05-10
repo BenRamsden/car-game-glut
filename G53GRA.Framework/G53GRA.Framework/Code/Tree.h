@@ -4,7 +4,7 @@ class Tree :
 	public DisplayableObject
 {
 public:
-	Tree();
+	Tree(GLint barkTexId, GLint leafTexId);
 	virtual ~Tree();
 	virtual void Display();
 private:

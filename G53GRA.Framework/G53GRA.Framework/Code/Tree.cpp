@@ -2,7 +2,8 @@
 #include "Helpers.h"
 
 
-Tree::Tree()
+Tree::Tree(GLint barkTexId, GLint leafTexId) :
+	barkTexId(barkTexId), leafTexId(leafTexId)
 {
 }
 
@@ -17,14 +18,7 @@ void Tree::Display()
 
 	glTranslatef(pos[0], pos[1], pos[2]);
 
-	glPushMatrix();
-	glRotatef(-90, 1, 0, 0);
-	Helpers::DrawCylinder(5, 15);
-	glPopMatrix();
-
-	glTranslatef(0, 15, 0);
-
-	glPushMatrix();
+	Tree::DrawSection(5, 5, 15, barkTexId);
 
 	Tree::DrawSection(5, 15, 5, leafTexId);
 
@@ -43,11 +37,9 @@ void Tree::Display()
 	Tree::DrawSection(5, 0, 5, leafTexId);
 
 	glPopMatrix();
-
-	glPopMatrix();
 }
 
 void Tree::DrawSection(GLfloat top_radius, GLfloat bottom_radius, GLfloat height, GLint texId) {
 	glTranslatef(0, height, 0);
-	Helpers::DrawCone(top_radius, bottom_radius, height);
+	Helpers::DrawTexturedCone(top_radius, bottom_radius, height, texId);
 }

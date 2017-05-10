@@ -154,9 +154,6 @@
     <Image Include="Textures\Asphalt_Road.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Textures\Tree_Leaves.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
     <Image Include="Textures\alpha_clouds.bmp">
       <Filter>Resource Files</Filter>
     </Image>
@@ -172,10 +169,13 @@
     <Image Include="Textures\Starscape.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\..\..\..\Users\benra\Desktop\american.bmp">
+    <Image Include="Textures\american.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="Textures\american.bmp">
+    <Image Include="Textures\barkTexture.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Textures\leafTexture.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

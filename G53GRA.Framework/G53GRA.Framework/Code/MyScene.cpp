@@ -24,7 +24,7 @@ void MyScene::Initialise()
 
 	//Translate, Rotate, Scale (T * R * S)
 
-	Tree *tree = new Tree();
+	Tree *tree = new Tree(Scene::GetTexture("./Textures/barkTexture.bmp"), Scene::GetTexture("./Textures/leafTexture.bmp"));
 	tree->position(0, -16, -30);
 	AddObjectToScene(tree);
 

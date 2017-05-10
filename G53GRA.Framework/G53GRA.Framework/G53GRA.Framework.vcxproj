@@ -18,6 +18,7 @@
     <ClCompile Include="Code\SkyBox.cpp" />
     <ClCompile Include="Code\TexturedSphere.cpp" />
     <ClCompile Include="Code\Tree.cpp" />
+    <ClCompile Include="Code\TreeSpawner.cpp" />
     <ClCompile Include="Code\WorldProperties.cpp" />
     <ClCompile Include="Framework\Engine\Engine.cpp" />
     <ClCompile Include="Framework\Engine\Scene.cpp" />
@@ -39,6 +40,7 @@
     <ClInclude Include="Code\SkyBox.h" />
     <ClInclude Include="Code\TexturedSphere.h" />
     <ClInclude Include="Code\Tree.h" />
+    <ClInclude Include="Code\TreeSpawner.h" />
     <ClInclude Include="Code\WorldProperties.h" />
     <ClInclude Include="Framework\Engine\Engine.h" />
     <ClInclude Include="Framework\Engine\Scene.h" />

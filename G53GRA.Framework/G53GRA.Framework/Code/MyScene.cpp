@@ -11,6 +11,7 @@
 #include "Car.h"
 #include "ObjectSpawner.h"
 #include "Tree.h"
+#include "TreeSpawner.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -24,16 +25,16 @@ void MyScene::Initialise()
 
 	//Translate, Rotate, Scale (T * R * S)
 
-	Tree *tree = new Tree(Scene::GetTexture("./Textures/barkTexture.bmp"), Scene::GetTexture("./Textures/leafTexture.bmp"));
-	tree->position(0, -16, -30);
-	AddObjectToScene(tree);
-
 	WorldProperties *worldProperties = new WorldProperties();	
 	AddObjectToScene(worldProperties);
 
 	ObjectSpawner *objectSpawner = new ObjectSpawner(worldProperties, Scene::GetTexture("./Textures/american.bmp"));
 	objectSpawner->position(0, -16, -60);  //must be at position of front of car, to detect collisions
 	AddObjectToScene(objectSpawner);
+
+	TreeSpawner *treeSpawner = new TreeSpawner(worldProperties, Scene::GetTexture("./Textures/barkTexture.bmp"), Scene::GetTexture("./Textures/leafTexture.bmp"));
+	treeSpawner->position(0, -16, -30);
+	AddObjectToScene(treeSpawner);
 
 	Car *car = new Car(worldProperties);
 	car->position(0, -16, -30);

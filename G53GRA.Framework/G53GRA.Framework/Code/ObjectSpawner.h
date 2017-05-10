@@ -17,10 +17,8 @@ private:
 	struct CollisionProperties {
 		float x, y, z;
 		bool enabled;
-	};
+	} collisionProperties[MAX_COLLISION_OBJECTS];
 	
-	CollisionProperties collisionProperties[MAX_COLLISION_OBJECTS];
-
 	DisplayableObject *collisionObjects[MAX_COLLISION_OBJECTS];
 	int collisionObjectCount = 0;
 

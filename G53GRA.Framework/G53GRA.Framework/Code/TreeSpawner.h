@@ -18,10 +18,12 @@ private:
 	WorldProperties *worldProperties;
 	Tree *tree;
 
-	static const int NUM_TREES = 30;
+	static const int NUM_TREES = 20;
 	struct TreeProperty {
 		float x, y, z;
 	} treeProperties[NUM_TREES];
+
+	void ResetTree(int t);
 
 };
 

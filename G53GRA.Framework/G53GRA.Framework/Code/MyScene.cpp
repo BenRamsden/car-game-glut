@@ -10,6 +10,7 @@
 #include "WorldProperties.h"
 #include "Car.h"
 #include "ObjectSpawner.h"
+#include "Tree.h"
 
 MyScene::MyScene(int argc, char** argv, const char *title, const int& windowWidth, const int& windowHeight)
 	: Scene(argc, argv, title, windowWidth, windowHeight)
@@ -22,6 +23,10 @@ void MyScene::Initialise()
 	glClearColor(static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(0.0f), static_cast<GLclampf>(1.0f));
 
 	//Translate, Rotate, Scale (T * R * S)
+
+	Tree *tree = new Tree();
+	tree->position(0, -16, -30);
+	AddObjectToScene(tree);
 
 	WorldProperties *worldProperties = new WorldProperties();	
 	AddObjectToScene(worldProperties);

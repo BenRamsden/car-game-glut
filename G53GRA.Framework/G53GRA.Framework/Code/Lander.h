@@ -7,7 +7,5 @@ public:
 	Lander();
 	virtual ~Lander();
 	void Display();
-private:
-	void DrawCone(GLfloat top_radius, GLfloat bottom_radius, GLfloat height);
 };
 

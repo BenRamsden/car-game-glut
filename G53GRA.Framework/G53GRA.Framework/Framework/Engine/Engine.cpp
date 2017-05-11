@@ -76,7 +76,7 @@ void Engine::InitFunc()
 	glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, GL_FALSE);
 
 	// set the ambient light model
-	GLfloat global_ambient[] = { 0.3f, 0.3f, 0.3f, 1.0f };
+	GLfloat global_ambient[] = { 0.5f, 0.5f, 0.5f, 1.0f };
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, global_ambient);
 
 	// enable directional light lighting

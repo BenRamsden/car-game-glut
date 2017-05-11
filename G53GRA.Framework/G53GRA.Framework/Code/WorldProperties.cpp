@@ -37,7 +37,11 @@ void WorldProperties::HandleSpecialKey(int key, int state, int x, int y)
 	}
 
 	if (key == GLUT_KEY_DOWN) {
-		if (state == 1) updateGlobalVelocity[2] = -1.0f;
+		if (state == 1) {
+			if (globalVelocity[2] >= 1.0f) {
+				updateGlobalVelocity[2] = -1.0f;
+			}
+		}
 		if (state == 0) updateGlobalVelocity[2] = 0.0f;
 	}
 
